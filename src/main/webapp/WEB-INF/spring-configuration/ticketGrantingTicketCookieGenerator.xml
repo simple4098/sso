@@ -30,6 +30,6 @@
 	<bean id="ticketGrantingTicketCookieGenerator" class="org.jasig.cas.web.support.CookieRetrievingCookieGenerator"
 		p:cookieSecure="false"
 		p:cookieMaxAge="-1"
-		p:cookieName="CASTGC"
-		p:cookiePath="/cas" />
+		p:cookieName="fanQieTGC"
+		p:cookiePath="/fanQie" />
 </beans>

@@ -20,7 +20,7 @@
 </div>
 </body>
 <script src="/js/jquery-1.8.2.min.js"></script>
-<script type="text/javascript">
+<%--<script type="text/javascript">
 	var i = 5;
 	function remainTime(){
 		if(i==0){
@@ -30,6 +30,6 @@
 		setTimeout("remainTime()",1000);
 	}
 	remainTime();
-</script>
+</script>--%>
 </html>
 

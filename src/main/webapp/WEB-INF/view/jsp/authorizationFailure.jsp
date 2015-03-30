@@ -18,7 +18,6 @@
     under the License.
 
 --%>
-<jsp:directive.include file="/WEB-INF/view/jsp/default/ui/includes/top.jsp" />
 
 <%@ page import="org.jasig.cas.web.support.WebUtils"%>
 <%@ page import="org.springframework.security.web.WebAttributes"%>
@@ -57,4 +56,4 @@
         </c:when>
     </c:choose>
 </div>
-<jsp:directive.include file="/WEB-INF/view/jsp/default/ui/includes/bottom.jsp" />
+

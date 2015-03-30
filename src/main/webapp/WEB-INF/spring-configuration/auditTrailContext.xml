@@ -37,9 +37,9 @@
   </description>
 
   <aop:aspectj-autoproxy/>
-
+  <!--定义APPLICATION值-->
   <bean id="auditTrailManagementAspect" class="com.github.inspektr.audit.AuditTrailManagementAspect"
-    c:applicationCode="CAS" c:auditablePrincipalResolver-ref="auditablePrincipalResolver" 
+    c:applicationCode="fanQie" c:auditablePrincipalResolver-ref="auditablePrincipalResolver"
     c:auditTrailManagers-ref="auditTrailManager" c:auditActionResolverMap-ref="auditActionResolverMap"
     c:auditResourceResolverMap-ref="auditResourceResolverMap" />
 
