@@ -20,7 +20,7 @@
 
                 <entry key-ref="proxyAuthenticationHandler" value-ref="proxyPrincipalResolver" />
                 <entry key-ref="primaryAuthenticationHandler" value-ref="primaryPrincipalResolver" />
-                <entry key-ref="queryDatabaseAuthenticationFanQieHandler" value-ref="proxyPrincipalResolver" />
+                <entry key-ref="queryDatabaseAuthenticationFanQieHandler" value-ref="primaryPrincipalResolverF" />
             </map>
         </constructor-arg>
 
@@ -61,6 +61,12 @@
     <bean id="primaryPrincipalResolver"
           class="org.jasig.cas.authentication.principal.PersonDirectoryPrincipalResolver" >
         <property name="attributeRepository" ref="attributeRepository" />
+    </bean>
+    <bean id="primaryPrincipalResolverF"
+          class="com.fanqie.sso.principal.PersonDirectoryPrincipalFanQieResolver" >
+        <property name="attributeRepository" ref="attributeRepository" />
+        <property name="dataSource" ref="dataSource"/>
+        <property name="sqlId" value="select id from tomato_inn_admin where mobile=? OR user_code=? and status=2" />
     </bean>
 
     <!--
