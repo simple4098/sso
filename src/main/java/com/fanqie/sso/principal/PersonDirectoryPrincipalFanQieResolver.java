@@ -5,7 +5,6 @@ import org.jasig.cas.authentication.principal.Principal;
 import org.jasig.cas.authentication.principal.PrincipalResolver;
 import org.jasig.cas.authentication.principal.SimplePrincipal;
 import org.jasig.services.persondir.IPersonAttributeDao;
-import org.jasig.services.persondir.IPersonAttributes;
 import org.jasig.services.persondir.support.StubPersonAttributeDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,8 +13,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
 import javax.validation.constraints.NotNull;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -54,9 +51,6 @@ public class PersonDirectoryPrincipalFanQieResolver  implements PrincipalResolve
         } else {
             this.logger.debug("Creating SimplePrincipal for [{}]", principalId);
             convertedAttributes.put("userId",id);
-
-
-
             return new SimplePrincipal(principalId, convertedAttributes);
         }
     }
