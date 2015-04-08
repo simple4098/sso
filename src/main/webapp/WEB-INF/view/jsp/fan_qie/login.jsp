@@ -57,11 +57,6 @@
 						 <input type="text" id="yid" name="code"  class="form-control x164 in">
 						<img id="captcha_img" src="/randomImg"  title="看不清楚?点击更换验证码" onclick="javascript:refresh(this);" class="m">
 					</div>
-					<div class="form-group">
-						<label class="fl-label"></label>
-						<label for="j_remember" class="m">
-						<input id="j_remember" type="checkbox" value="true">&nbsp;记住登陆账号!</label>
-					</div>
                   <div class="form-group space">
                     <input type="hidden" name="lt" value="${loginTicket}" />
                     <input type="hidden" name="execution" value="${flowExecutionKey}" />

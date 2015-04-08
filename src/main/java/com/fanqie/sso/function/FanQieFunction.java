@@ -4,6 +4,9 @@ import org.apache.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.Properties;
 
 /**
@@ -30,6 +33,17 @@ public class FanQieFunction {
             log.error("读取配置文件异常:"+e);
         }
         return  p.getProperty("web.app.url");
+    }
+
+    /**
+     * 解码跳转的url
+     */
+    public static String obtRunUrl(String encodeUrl){
+        try {
+           return URLDecoder.decode(encodeUrl, "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            return  obtDefaultWebUrl();
+        }
     }
 
     /**

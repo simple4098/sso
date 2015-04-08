@@ -21,10 +21,15 @@
 </body>
 <script src="/js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript">
-	var i = 5;
+	var url = '${param.url}';
+	var i = 3;
 	function remainTime(){
 		if(i==0){
-			location.href='${fanQieFn:obtDefaultWebUrl()}';
+			if(url){//URLDecoder.decode(
+				location.href="${fanQieFn:obtRunUrl(param.url)}";
+			}else{
+				location.href='${fanQieFn:obtDefaultWebUrl()}';
+			}
 		}
 		$('#endTime').html(i--);
 		setTimeout("remainTime()",1000);

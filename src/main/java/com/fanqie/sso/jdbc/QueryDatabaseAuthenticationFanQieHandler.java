@@ -1,5 +1,6 @@
 package com.fanqie.sso.jdbc;
 
+import com.fanqie.sso.dao.UserDao;
 import org.apache.log4j.Logger;
 import org.jasig.cas.adaptors.jdbc.AbstractJdbcUsernamePasswordAuthenticationHandler;
 import org.jasig.cas.authentication.HandlerResult;
@@ -13,6 +14,8 @@ import javax.security.auth.login.AccountNotFoundException;
 import javax.security.auth.login.FailedLoginException;
 import javax.validation.constraints.NotNull;
 import java.security.GeneralSecurityException;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * DESC :
@@ -23,19 +26,24 @@ import java.security.GeneralSecurityException;
  */
 public  class QueryDatabaseAuthenticationFanQieHandler extends AbstractJdbcUsernamePasswordAuthenticationHandler{
     private  static  final Logger log =   Logger.getLogger(QueryDatabaseAuthenticationFanQieHandler.class);
-    @NotNull
+
     private String sql;
 
-    @NotNull
+
     private String sqlSalt;
+    @NotNull
+    private UserDao userDao;
 
     protected final HandlerResult authenticateUsernamePasswordInternal(final UsernamePasswordCredential credential) throws GeneralSecurityException, PreventedException {
         final String username = credential.getUsername();
         final String password = credential.getPassword();
         try {
-            final String salt = getJdbcTemplate().queryForObject(this.sqlSalt, String.class, username,username);
+            Map<String,Object> map = userDao.findUserInfo(username, username);
+            String salt = (String)map.get("salt");
+            String dbPassword = (String)map.get("password");
+           //final String salt = getJdbcTemplate().queryForObject(this.sqlSalt, String.class, username,username);
             final String encryptedPassword = this.getPasswordEncoder().encode(password+salt);
-            final String dbPassword = getJdbcTemplate().queryForObject(this.sql, String.class, username,username);
+            //final String dbPassword = getJdbcTemplate().queryForObject(this.sql, String.class, username,username);
             if (!dbPassword.equals(encryptedPassword)) {
                 throw new FailedLoginException("Password does not match value on record.");
             }
@@ -58,5 +66,9 @@ public  class QueryDatabaseAuthenticationFanQieHandler extends AbstractJdbcUsern
 
     public void setSqlSalt(final String sqlSalt) {
         this.sqlSalt = sqlSalt;
+    }
+
+    public void setUserDao(UserDao userDao) {
+        this.userDao = userDao;
     }
 }
