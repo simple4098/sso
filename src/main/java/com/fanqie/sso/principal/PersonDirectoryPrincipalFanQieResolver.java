@@ -1,16 +1,13 @@
 package com.fanqie.sso.principal;
 
 import com.fanqie.sso.dao.UserDao;
-import org.apache.commons.lang.StringUtils;
 import org.jasig.cas.authentication.Credential;
 import org.jasig.cas.authentication.principal.Principal;
 import org.jasig.cas.authentication.principal.PrincipalResolver;
 import org.jasig.cas.authentication.principal.SimplePrincipal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
 import javax.validation.constraints.NotNull;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,8 +36,10 @@ public class PersonDirectoryPrincipalFanQieResolver  implements PrincipalResolve
         if (map!=null){
             Integer parentId = (Integer)map.get("parent_id");
             Integer id = (Integer)map.get("id");
+            Integer innId = (Integer)map.get("inn_id");
             String userId = parentId==null?id.toString():parentId.toString();
             convertedAttributes.put("userId",userId);
+            convertedAttributes.put("innId",innId);
             return new SimplePrincipal(principalId, convertedAttributes);
         }else {
             return  null;
