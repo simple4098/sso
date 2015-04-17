@@ -1,3 +1,4 @@
+<%@ page import="com.fanqie.sso.common.Constants" %>
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page session="true" %>
 
@@ -55,7 +56,7 @@
 					</div>
 					<div class="form-group">
 						<label  class="fl-label">验证码：</label>
-						 <input type="text" id="yid" name="code"  class="form-control x164 in">
+						 <input type="text" id="yid" name="code" readonly  class="form-control x164 in">
 						<img id="captcha_img" src="/randomImg"  title="看不清楚?点击更换验证码" onclick="javascript:refresh(this);" class="m">
 					</div>
                   <div class="form-group space">
