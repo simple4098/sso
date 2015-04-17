@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="formF" uri="http://www.fanqiele.com/tags/form" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en" class="no-js">
@@ -34,7 +35,7 @@
 				<img src="/images/login_logo.png" >
 			</div>
 			<div class="login_form">
-				<form:form method="post" id="fm1" cssClass="fm-v clearfix" commandName="${commandName}" htmlEscape="true">
+				<formF:form method="post" id="fm1" cssClass="fm-v clearfix" commandName="${commandName}" htmlEscape="true">
                   <form:errors path="*" id="msg" cssClass="errors" element="div" />
 					<div class="form-group">
 						<label for="username" class="fl-label"><spring:message code="screen.welcome.label.netid" /></label>
@@ -65,7 +66,7 @@
                     <input class="btn-submit" name="submit" accesskey="l" value="<spring:message code="screen.welcome.button.login" />" tabindex="4" type="submit" />
                     <input class="btn-reset" name="reset" accesskey="c" value="<spring:message code="screen.welcome.button.clear" />" tabindex="5" type="reset" />
                   </div>
-				</form:form>
+				</formF:form>
 			</div>
 		</div>
 		<div class="bottom">Copyright &copy;2012-2015成都番茄来了科技有限公司</div>

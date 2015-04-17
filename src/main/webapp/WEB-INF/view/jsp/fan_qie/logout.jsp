@@ -1,3 +1,5 @@
+<%@ page import="org.apache.commons.lang.StringUtils" %>
+<%@ page import="com.fanqie.sso.function.FanQieFunction" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <%@ page session="true" %>
 <%@ page pageEncoding="UTF-8" %>
@@ -7,7 +9,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fanQieFn" uri="http://www.fanqie.com/sso/functions" %>
-<html>
+<%--<html>
 <head>
 	<title>番茄来了认证中心</title>
 </head>
@@ -36,6 +38,15 @@
 	}
 	remainTime();
 </script>
-</html>
+</html>--%>
+<%
+	String returnUrl = request.getParameter("url");
+	if(StringUtils.isNotEmpty(returnUrl)){
+		returnUrl = FanQieFunction.obtRunUrl(returnUrl);
+	}else {
+		returnUrl = FanQieFunction.obtDefaultWebUrl();
+	}
+	response.sendRedirect(returnUrl);
+%>
 
 

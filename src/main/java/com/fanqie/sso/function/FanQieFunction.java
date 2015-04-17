@@ -21,10 +21,9 @@ public class FanQieFunction {
     }
 
     /**
-     * 读取默认的应用的首页地址
+     * 获取默认的 web应用的主机名称
      */
-    public static String obtDefaultWebUrl(){
-        //FanQieFunction.class.getClassLoader().getResourceAsStream
+    public static String obtDefaultWebHost(){
         InputStream in =FanQieFunction.class.getResourceAsStream("/service.properties");
         Properties p = new Properties();
         try {
@@ -33,6 +32,26 @@ public class FanQieFunction {
             log.error("读取配置文件异常:"+e);
         }
         return  p.getProperty("web.app.url");
+    }
+
+   /**
+     * 获取默认的 web登录后跳转的页面
+     */
+    public static String obtDefaultWebIndex(){
+        //进行URL 编码
+        try {
+            return URLEncoder.encode(obtDefaultWebHost()+"inns","UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            log.error("URL 编码异常:"+e);
+        }
+        return  "";
+    }
+
+    /**
+     * 读取默认的应用的首页地址
+     */
+    public static String obtDefaultWebUrl(){
+        return  obtDefaultWebHost();
     }
 
     /**
@@ -45,19 +64,4 @@ public class FanQieFunction {
             return  obtDefaultWebUrl();
         }
     }
-
-    /**
-     * 获取应用的首页
-     * @return
-     *//*
-    public static String obtWebIndexUrl(){
-        InputStream in =Object.class.getResourceAsStream("/service.properties");
-        Properties p = new Properties();
-        try {
-            p.load(in);
-        } catch (IOException e) {
-            log.error("读取配置文件异常:"+e);
-        }
-        return  p.getProperty("web.app.index");
-    }*/
 }
