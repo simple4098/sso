@@ -89,7 +89,8 @@
         <prop key="/authorizationFailure.html">passThroughController</prop>
         <prop key="/status">healthCheckController</prop>
         <prop key="/statistics">statisticsController</prop>
-          <prop key="/randomImg">randomValidateImgController</prop>
+        <prop key="/randomImg">randomValidateImgController</prop>
+        <prop key="/userInfo">userInfoController</prop>
       </util:properties>
     </property>
     <!--
@@ -182,8 +183,13 @@
       </util:list>
     </property>
   </bean>
-  
-  <!--  CAS 2 Protocol service/proxy validation -->     
+
+    <!--用户信息-->
+    <bean id="userInfoController" class="com.fanqie.sso.controller.UserInfoController" >
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+  <!--  CAS 2 Protocol service/proxy validation -->
   <bean id="abstractValidateController" class="org.jasig.cas.web.ServiceValidateController" abstract="true"
         p:centralAuthenticationService-ref="centralAuthenticationService"
         p:proxyHandler-ref="proxy20Handler"

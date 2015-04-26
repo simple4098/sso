@@ -34,11 +34,10 @@ public class PersonDirectoryPrincipalFanQieResolver  implements PrincipalResolve
         Map<String,Object> map =  userDao.findUserInfo(principalId, principalId);
         Map<String,Object> convertedAttributes = new HashMap<String, Object>();
         if (map!=null){
-            Integer parentId = (Integer)map.get("parent_id");
+            //Integer parentId = (Integer)map.get("parent_id");
             Integer id = (Integer)map.get("id");
             Integer innId = (Integer)map.get("inn_id");
-            String userId = parentId==null?id.toString():parentId.toString();
-            convertedAttributes.put("userId",userId);
+            convertedAttributes.put("userId",id);
             convertedAttributes.put("innId",innId);
             return new SimplePrincipal(principalId, convertedAttributes);
         }else {

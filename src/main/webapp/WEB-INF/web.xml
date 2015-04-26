@@ -173,6 +173,11 @@
     <url-pattern>/randomImg</url-pattern>
   </servlet-mapping>
 
+  <servlet-mapping>
+    <servlet-name>cas</servlet-name>
+    <url-pattern>/userInfo</url-pattern>
+  </servlet-mapping>
+
   <session-config>
     <!-- Default to 5 minute session timeouts -->
     <session-timeout>240</session-timeout>
