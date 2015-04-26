@@ -28,7 +28,11 @@
     </description>
        
   <!-- Ticket Registry -->
-  <bean id="ticketRegistry" class="org.jasig.cas.ticket.registry.DefaultTicketRegistry" />
+  <bean id="ticketRegistry" class="org.jasig.cas.ticket.registry.DefaultTicketRegistry" >
+      <constructor-arg index="0" value="1000" />
+      <constructor-arg index="1" value="1" />
+      <constructor-arg index="2" value="16" />
+  </bean>
 	
 	<!--Quartz -->
 	<!-- TICKET REGISTRY CLEANER -->
