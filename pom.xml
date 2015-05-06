@@ -51,7 +51,7 @@
             <url>http://repo.fanqielaile.com/nexus/content/groups/public/</url>
         </repository>
     </repositories>
-    <profiles>
+    <!--<profiles>
         <profile>
             <id>development</id>
             <properties>
@@ -82,7 +82,7 @@
             </properties>
 
         </profile>
-    </profiles>
+    </profiles>-->
     <dependencies>
         <!--<dependency>
             <groupId>com.alibaba</groupId>
