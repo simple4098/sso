@@ -143,7 +143,7 @@
     <beans profile="dev">
             <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
                 <property name="driverClassName" value="org.postgresql.Driver"/>
-                <property name="url" value="jdbc:postgresql://192.168.1.158:5432/ota_db"/>
+                <property name="url" value="jdbc:postgresql://192.168.1.158:5432/tomato_db"/>
                 <property name="username" value="ota"/>
                 <property name="password" value="ota"/>
                 <!--<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -159,6 +159,9 @@
                 <property name="removeAbandonedTimeout" value="1800" />
                 <property name="validationQuery" value="select 1"/>
             </bean>
+           <bean id="configuration" class="com.fanqie.sso.common.Configuration">
+               <property name="webHost" value="http://192.168.1.158"/>
+           </bean>
     </beans>
     <beans profile="production">
         <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -174,5 +177,9 @@
             <property name="removeAbandoned" value="true" />
             <property name="removeAbandonedTimeout" value="1800" />
         </bean>
+        <bean id="configuration" class="com.fanqie.sso.common.Configuration">
+            <property name="webHost" value="http://www.fanqiele.com"/>
+        </bean>
+
     </beans>
 </beans>

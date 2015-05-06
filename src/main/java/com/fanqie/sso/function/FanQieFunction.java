@@ -1,5 +1,6 @@
 package com.fanqie.sso.function;
 
+import com.fanqie.sso.common.Configuration;
 import org.apache.log4j.Logger;
 
 import java.io.IOException;
@@ -24,14 +25,15 @@ public class FanQieFunction {
      * 获取默认的 web应用的主机名称
      */
     public static String obtDefaultWebHost(){
-        InputStream in =FanQieFunction.class.getResourceAsStream("/service.properties");
-        Properties p = new Properties();
-        try {
-            p.load(in);
-        } catch (IOException e) {
-            log.error("读取配置文件异常:"+e);
-        }
-        return  p.getProperty("web.app.url");
+//        InputStream in =FanQieFunction.class.getResourceAsStream("/service.properties");
+//        Properties p = new Properties();
+//        try {
+//            p.load(in);
+//        } catch (IOException e) {
+//            log.error("读取配置文件异常:"+e);
+//        }
+//        return  p.getProperty("web.app.url");
+        return Configuration.getWebHost();
     }
 
    /**
@@ -40,7 +42,7 @@ public class FanQieFunction {
     public static String obtDefaultWebIndex(){
         //进行URL 编码
         try {
-            return URLEncoder.encode(obtDefaultWebHost()+"inns","UTF-8");
+            return URLEncoder.encode(obtDefaultWebHost()+"/inns","UTF-8");
         } catch (UnsupportedEncodingException e) {
             log.error("URL 编码异常:"+e);
         }
