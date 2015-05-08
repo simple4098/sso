@@ -91,13 +91,7 @@ public class ImageFanQieVaditeAuthenticationViaFormAction {
             // 从session中取出生成验证码的时候就保存在session中的验证码
             HttpSession session =  WebUtils.getHttpServletRequest(context).getSession();
             String sessionCode = (String) session.getAttribute(Constants.RANDOM_CODE);
-            // 如果验证码不正确
-            /*if (!usernamePfq.getCode().toUpperCase().equals(sessionCode.toUpperCase())) {
-                //logger.warn("验证码检验有误");
-                final String code = "user.core.error";
-                messageContext.addMessage(new MessageBuilder().error().code(code).arg("").defaultText(code).build());
-                return newEvent(ERROR);
-            }*/
+
         // Validate login ticket
         final String authoritativeLoginTicket = WebUtils.getLoginTicketFromFlowScope(context);
         final String providedLoginTicket = WebUtils.getLoginTicketFromRequest(context);
@@ -142,6 +136,13 @@ public class ImageFanQieVaditeAuthenticationViaFormAction {
             }
             if (this.hasWarningMessages) {
                 return newEvent(SUCCESS_WITH_WARNINGS);
+            }
+            // 如果验证码不正确
+            if (!usernamePfq.getCode().toUpperCase().equals(sessionCode.toUpperCase())) {
+                //logger.warn("验证码检验有误");
+                final String code = "user.core.error";
+                messageContext.addMessage(new MessageBuilder().error().code(code).arg("").defaultText(code).build());
+                return newEvent(ERROR);
             }
             return newEvent(SUCCESS);
         } catch (final org.jasig.cas.authentication.AuthenticationException e) {

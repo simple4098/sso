@@ -1,0 +1,274 @@
+@charset "UTF-8";
+/* 公共 */
+.icon {
+  background-image: url(../img/home_icons.png);
+}
+.wid1000{
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+}
+a:hover{
+	text-decoration: none;
+}
+/*头部*/
+#head{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	padding: 10px 0;
+	font-size: 14px;
+	background-color: #fff;
+	box-shadow: 0 2px 3px rgba(0,0,0,.2);
+	z-index: 10;
+}
+#head em{
+	float: left;
+	width:133px;
+	height:46px;
+	background-position:-4px -3px;
+}
+
+/* 登陆部分 */
+#container{
+	margin-top: 66px;
+	height: 556px;
+	background: url(../img/login.jpg);
+}
+.wrap-login{
+	height: 556px;
+}
+.box-login{
+	width: 316px;
+	position: absolute;
+	top: 33px;
+	right: 114px;
+	background: #fff;
+	border: 1px solid #e1e7e9;
+	box-shadow: 0 0 5px #e8eef0;
+}
+.login-head{
+	padding: 8px 0;
+	border-bottom: 1px solid #f3f4f4;
+	margin-bottom: 17px;
+}
+.login-title{
+	font-size: 14px;
+  	text-align: left;
+  	color: #000;
+  	padding-left: 22px;
+}
+.login-body{
+	width: 273px;
+	margin: 0 auto;
+}
+.input-wrapper{
+	margin-bottom: 19px;
+	width: 271px;
+	height: 32px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+.login-input{
+	width: 221px;
+	height: 32px;
+	line-height: 32px;
+	font-size: 15px;	
+	padding-left: 50px;
+	background-image: url(../img/login_icon.png);
+	background-repeat: no-repeat;
+}
+
+#account{
+	background-position: 0 0;
+}
+#pwd{
+	background-position: 0 -34px;
+}
+.captcha-wrapper{
+	margin-bottom: 19px;
+	width: 273px;
+	height: 34px;
+	position: relative;
+}
+.captcha-input{
+	width: 133px;
+	border: 1px solid #ccc;
+	background-position: 0 -68px;
+	float: left;
+}
+.captcha-wrapper img{
+	float: right;
+	width: 82px;
+	height: 32px;
+	border: 1px solid #ccc;
+	cursor:pointer;
+
+}
+.ui-botton{
+	display: inline-block;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 19px;
+    border-radius: 3px;
+    border: 0;  
+    outline: 0;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+}
+.login-botton{
+	width: 273px;
+	height: 40px;
+	color: #fff;
+	background-color: #7bb811;
+}
+.registe-botton{
+	width: 271px;
+	height: 38px;
+	border: 1px solid #ccc;
+	color: #000;
+}
+.tip{
+	width: 120px;
+	height: 32px;
+	background: #feeac1;
+	border: 1px solid #fcc449;
+	position: absolute;
+	right: -130px;
+	top: -1px;
+	color: #ec3c03;
+	text-align: center;
+	line-height: 32px;
+	display: none;
+}
+
+.error_v{
+	width: 120px;
+	height: 32px;
+	background: #feeac1;
+	border: 1px solid #fcc449;
+	position: relative;
+	right: 1px;
+	top: -7px;
+	color: #ec3c03;
+	text-align: center;
+	line-height: 32px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*底部*/
+#foot{
+	padding: 26px 0;
+	background-color: #fff;
+	color: #9a9aac;
+}
+#foot a{
+	color: #9a9aac;
+	text-decoration: none;
+}
+#foot li{
+	float: left;
+}
+#foot .fl-first li{
+	border-left: 1px solid #343742;
+	padding: 0 10px;
+	line-height: 1;
+}
+#foot .fl-first li:first-child{
+	padding-left: 0;
+	border: none;
+}
+#foot .fr li{
+	margin-left: 24px;
+	line-height: 1;
+	font-size: 12px;
+}
+.contact-index{
+	font-size: 20px;
+	margin-top: 10px;
+	margin-bottom: 36px;
+}
+.icon-tele{
+	display: inline-block;
+	width: 38px;
+	height: 38px;
+	vertical-align: middle;
+	margin-right: 12px;
+	background-position:-7px -413px;
+}
+.icon-qq-index{
+	position: relative;
+	display: inline-block;
+	width: 39px;
+	height: 39px;
+	margin: 0 8px;
+	margin-left: 48px;
+	vertical-align: middle;
+	background-position:-57px -414px;
+}
+.icon-qq-index img,.icon-wx-index img{
+	position: absolute;
+	display: none;
+	top: -160px;
+	left: -50px;
+}
+.icon-qq-index:hover img,.icon-wx-index:hover img{
+	display: block;
+}
+.icon-qq-index:hover{
+	background-position:-57px -455px;
+	cursor: pointer; 
+}
+.icon-wx-index{
+	position: relative;
+	display: inline-block;
+	width: 39px;
+	height: 39px;
+	margin: 0 8px;
+	vertical-align: middle;
+	background-position:-110px -414px;
+}
+.icon-wx-index:hover{
+	background-position:-110px -455px;
+	cursor: pointer;
+}
+.icon-weibo-index{
+	display: inline-block;
+	width: 39px;
+	height: 39px;
+	margin: 0 8px;
+	vertical-align: middle;
+	background-position:-161px -414px;
+}
+.icon-weibo-index:hover{
+	background-position:-161px -455px;
+	cursor: pointer;
+}

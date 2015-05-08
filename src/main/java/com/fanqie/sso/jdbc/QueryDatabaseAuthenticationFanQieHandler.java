@@ -15,7 +15,6 @@ import javax.security.auth.login.FailedLoginException;
 import javax.validation.constraints.NotNull;
 import java.security.GeneralSecurityException;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * DESC :
@@ -41,9 +40,7 @@ public  class QueryDatabaseAuthenticationFanQieHandler extends AbstractJdbcUsern
             Map<String,Object> map = userDao.findUserInfo(username, username);
             String salt = (String)map.get("salt");
             String dbPassword = (String)map.get("password");
-           //final String salt = getJdbcTemplate().queryForObject(this.sqlSalt, String.class, username,username);
             final String encryptedPassword = this.getPasswordEncoder().encode(password+salt);
-            //final String dbPassword = getJdbcTemplate().queryForObject(this.sql, String.class, username,username);
             if (!dbPassword.equals(encryptedPassword)) {
                 throw new FailedLoginException("Password does not match value on record.");
             }

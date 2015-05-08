@@ -22,5 +22,10 @@
     <function-class>com.fanqie.sso.function.FanQieFunction</function-class>
     <function-signature>java.lang.String obtRunUrl(java.lang.String)</function-signature>
   </function>
+  <function>
+    <name>obtRegisterUrl</name>
+    <function-class>com.fanqie.sso.function.FanQieFunction</function-class>
+    <function-signature>java.lang.String obtRegisterUrl()</function-signature>
+  </function>
 
 </taglib>

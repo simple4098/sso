@@ -57,6 +57,13 @@ public class FanQieFunction {
     }
 
     /**
+     * 读取默认的应用的注册地址
+     */
+    public static String obtRegisterUrl(){
+        return  Configuration.getRegisterUrl();
+    }
+
+    /**
      * 解码跳转的url
      */
     public static String obtRunUrl(String encodeUrl){

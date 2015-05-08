@@ -9,6 +9,8 @@ package com.fanqie.sso.common;
  */
 public class Configuration {
     private static String WEB_HOST="";
+    private static String REGISTER_URL="";
+
 
 
     public  void setWebHost(String webHost) {
@@ -17,5 +19,13 @@ public class Configuration {
 
     public static String getWebHost() {
         return WEB_HOST;
+    }
+
+    public  void setRegisterUrl(String registerUrl) {
+        Configuration.REGISTER_URL = registerUrl;
+    }
+
+    public static String getRegisterUrl() {
+        return REGISTER_URL;
     }
 }
