@@ -38,6 +38,18 @@ public class UserInfoController extends AbstractController {
         String tonKent = request.getParameter("tonKent");
         if ("fanQieST".equals(tonKent)) {
             Map<String, Object> userInfo = userDao.findUserInfo(userName, userName);
+            String parentMobile = "";
+            if (userInfo!=null){
+                Integer pId = (Integer)userInfo.get("parent_id");
+                Map<String, Object> parentMap = null;
+                if (pId!=null){
+                    parentMap = userDao.findUserInfo(pId.toString());
+                    parentMobile = (String)parentMap.get("mobile");
+                }else {
+                    parentMobile = (String)userInfo.get("mobile");
+                }
+                userInfo.put("parentMobile",parentMobile);
+            }
             JSONObject jsonObject = JSONObject.fromObject(userInfo);
             response.setContentType("json/html;charset=UTF-8");
             response.getWriter().print(jsonObject.toString());

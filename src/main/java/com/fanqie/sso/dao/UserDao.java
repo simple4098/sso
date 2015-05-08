@@ -12,6 +12,8 @@ import java.util.Map;
 public class UserDao extends BaseDao {
     private String sql;
 
+    private String parentSql;
+
     public String getSql() {
         return sql;
     }
@@ -20,9 +22,18 @@ public class UserDao extends BaseDao {
         this.sql = sql;
     }
 
-    public Map<String,Object> findUserInfo(String ... params){
-        Map<String,Object> map = getJdbcTemplate().queryForMap(this.sql,params);
+    public String getParentSql() {
+        return parentSql;
+    }
 
-        return map;
+    public void setParentSql(String parentSql) {
+        this.parentSql = parentSql;
+    }
+
+    public Map<String,Object> findUserInfo(String ... params){
+        return getJdbcTemplate().queryForMap(this.sql,params);
+    }
+    public Map<String,Object> findUserInfoById(String ... params){
+        return  getJdbcTemplate().queryForMap(this.parentSql,params);
     }
 }
