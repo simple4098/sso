@@ -37,7 +37,7 @@
 			</div>
 			<div class="login-body">
 				<formF:form method="post" id="fm1" cssClass="" commandName="${commandName}" htmlEscape="true">
-					<form:errors path="*" id="error_v" cssClass="error_v" element="div" cssStyle="display: block" />
+					<form:errors path="*" id="error_v" cssClass="error_v" element="div" cssStyle="display: none" />
 					<div class="input-wrapper">
 						<c:if test="${not empty sessionScope.openIdLocalId}">
 							<strong>${sessionScope.openIdLocalId}</strong>
@@ -94,6 +94,17 @@
 <script type="text/javascript" src="/static/js/jquery_1.9.js"></script>
 <script type="text/javascript" src="/static/js/login.js"></script>
 <script>
+	$(function(){
+		var message = $("#error_v").text();
+		if("密码错误"==message){
+			$("#password_tip").css("display","block").html(message);
+		}else if("用户名错误"==message){
+			$("#mobile_tip").css("display","block").html(message);
+		}else if("验证码错误"==message || "验证码必填"==message){
+			$("#captcha_tip").css("display","block").html(message);
+		}
+
+	})
 	function refresh(obj){
 		obj.src = "<c:url value='/randomImg?'/>"+Math.random();
 	}

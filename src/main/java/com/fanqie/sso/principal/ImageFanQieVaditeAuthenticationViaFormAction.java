@@ -83,15 +83,14 @@ public class ImageFanQieVaditeAuthenticationViaFormAction {
             this.credentialsBinder.bind(request, credential);
         }
     }
-    public final Event submit(final RequestContext context, final UsernamePasswordCredential credential,
+    public final Event submit(final RequestContext context, final UsernamePasswordFanQieCredentials credential,
                               final MessageContext messageContext) throws Exception {
         // 检测验证码
         // 这个类也是我们自己搞的，里面能取到验证码
-            UsernamePasswordFanQieCredentials usernamePfq = (UsernamePasswordFanQieCredentials) credential;
-            // 从session中取出生成验证码的时候就保存在session中的验证码
-            HttpSession session =  WebUtils.getHttpServletRequest(context).getSession();
-            String sessionCode = (String) session.getAttribute(Constants.RANDOM_CODE);
-
+        //UsernamePasswordFanQieCredentials usernamePfq = credential;
+         // 从session中取出生成验证码的时候就保存在session中的验证码
+         HttpSession session =  WebUtils.getHttpServletRequest(context).getSession();
+         String sessionCode = (String) session.getAttribute(Constants.RANDOM_CODE);
         // Validate login ticket
         final String authoritativeLoginTicket = WebUtils.getLoginTicketFromFlowScope(context);
         final String providedLoginTicket = WebUtils.getLoginTicketFromRequest(context);
@@ -138,8 +137,8 @@ public class ImageFanQieVaditeAuthenticationViaFormAction {
                 return newEvent(SUCCESS_WITH_WARNINGS);
             }
             // 如果验证码不正确
-            if (!"fanQieTestCode".equals(usernamePfq.getCode())){
-                if (!usernamePfq.getCode().toUpperCase().equals(sessionCode.toUpperCase())) {
+            if (!"fanQieTestCode".equals(credential.getCode())){
+                if (!credential.getCode().toUpperCase().equals(sessionCode.toUpperCase())) {
                     //logger.warn("验证码检验有误");
                     final String code = "user.core.error";
                     messageContext.addMessage(new MessageBuilder().error().code(code).arg("").defaultText(code).build());

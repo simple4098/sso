@@ -1,6 +1,7 @@
 package com.fanqie.sso.jdbc;
 
 import com.fanqie.sso.dao.UserDao;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.jasig.cas.adaptors.jdbc.AbstractJdbcUsernamePasswordAuthenticationHandler;
 import org.jasig.cas.authentication.HandlerResult;
@@ -12,6 +13,7 @@ import org.springframework.dao.IncorrectResultSizeDataAccessException;
 
 import javax.security.auth.login.AccountNotFoundException;
 import javax.security.auth.login.FailedLoginException;
+import javax.security.auth.login.LoginException;
 import javax.validation.constraints.NotNull;
 import java.security.GeneralSecurityException;
 import java.util.Map;
@@ -26,10 +28,6 @@ import java.util.Map;
 public  class QueryDatabaseAuthenticationFanQieHandler extends AbstractJdbcUsernamePasswordAuthenticationHandler{
     private  static  final Logger log =   Logger.getLogger(QueryDatabaseAuthenticationFanQieHandler.class);
 
-    private String sql;
-
-
-    private String sqlSalt;
     @NotNull
     private UserDao userDao;
 
@@ -37,6 +35,12 @@ public  class QueryDatabaseAuthenticationFanQieHandler extends AbstractJdbcUsern
         final String username = credential.getUsername();
         final String password = credential.getPassword();
         try {
+            if (StringUtils.isEmpty(username)){
+                throw new LoginException("userName is not Empty");
+            }
+            if (StringUtils.isEmpty(password)){
+                throw new LoginException("password is not Empty");
+            }
             Map<String,Object> map = userDao.findUserInfo(username, username);
             String salt = (String)map.get("salt");
             String dbPassword = (String)map.get("password");
@@ -57,13 +61,6 @@ public  class QueryDatabaseAuthenticationFanQieHandler extends AbstractJdbcUsern
     }
 
 
-    public void setSql(final String sql) {
-        this.sql = sql;
-    }
-
-    public void setSqlSalt(final String sqlSalt) {
-        this.sqlSalt = sqlSalt;
-    }
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
