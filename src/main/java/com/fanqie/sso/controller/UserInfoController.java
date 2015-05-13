@@ -43,7 +43,7 @@ public class UserInfoController extends AbstractController {
                 Integer pId = (Integer)userInfo.get("parent_id");
                 Map<String, Object> parentMap = null;
                 if (pId!=null){
-                    parentMap = userDao.findUserInfo(pId.toString());
+                    parentMap = userDao.findUserInfoById(pId);
                     parentMobile = (String)parentMap.get("mobile");
                 }else {
                     parentMobile = (String)userInfo.get("mobile");

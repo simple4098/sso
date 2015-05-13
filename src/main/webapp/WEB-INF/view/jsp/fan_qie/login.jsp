@@ -38,7 +38,7 @@
 			<div class="login-body">
 				<formF:form method="post" id="fm1" cssClass="" commandName="${commandName}" htmlEscape="true">
 					<form:errors path="*" id="error_v" cssClass="error_v" element="div" cssStyle="display: none" />
-					<div class="input-wrapper">
+					<div class="input-wrapper" id="account">
 						<c:if test="${not empty sessionScope.openIdLocalId}">
 							<strong>${sessionScope.openIdLocalId}</strong>
 							<input type="hidden" id="username" name="username" value="${sessionScope.openIdLocalId}" />
@@ -50,14 +50,16 @@
 							<div id="mobile_tip" class="tip">账户名必须填写！</div>
 						</c:if>
 					</div>
-					<div class="input-wrapper">
+					<div class="input-wrapper"  id="pwd">
 						<spring:message code="screen.welcome.label.password.accesskey" var="passwordAccessKey" />
 						<formF:password cssClass="login-input" cssErrorClass="error" id="password" size="25" tabindex="2"
 									   path="password" placeholder="密码"  accesskey="${passwordAccessKey}" autocomplete="false" htmlEscape="true" />
 						<div id="password_tip" class="tip">密码必须填写！</div>
 					</div>
 					<div class="captcha-wrapper">
-						<input id="captcha" class="login-input captcha-input" name="code" type="text" placeholder="输入验证码">
+						<div class="captcha-box" id="captcha">
+							<input  class="login-input captcha-input" name="code" type="text" placeholder="输入验证码">
+						</div>
 						<img id="captcha_img" src="/randomImg"  title="看不清楚?点击更换验证码" onclick="javascript:refresh(this);" class="m">
 						<div id="captcha_tip" class="tip">验证码必须填写！</div>
 					</div>
@@ -94,20 +96,7 @@
 <script type="text/javascript" src="/static/js/jquery_1.9.js"></script>
 <script type="text/javascript" src="/static/js/login.js"></script>
 <script>
-	$(function(){
-		var message = $("#error_v").text();
-		if("密码错误"==message){
-			$("#password_tip").css("display","block").html(message);
-		}else if("用户名错误"==message){
-			$("#mobile_tip").css("display","block").html(message);
-		}else if("验证码错误"==message || "验证码必填"==message){
-			$("#captcha_tip").css("display","block").html(message);
-		}
 
-	})
-	function refresh(obj){
-		obj.src = "<c:url value='/randomImg?'/>"+Math.random();
-	}
 	// 百度统计
 	var _hmt = _hmt || [];
 	(function() {

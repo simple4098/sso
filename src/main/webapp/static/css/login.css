@@ -64,19 +64,20 @@ a:hover{
 }
 .input-wrapper{
 	margin-bottom: 19px;
-	width: 271px;
+	width: 239px;
 	height: 32px;
+	padding-left: 32px;
 	border: 1px solid #ccc;
 	position: relative;
-}
-.login-input{
-	width: 221px;
-	height: 32px;
-	line-height: 32px;
-	font-size: 15px;	
-	padding-left: 50px;
 	background-image: url(../img/login_icon.png);
 	background-repeat: no-repeat;
+}
+.login-input{
+	width: 239px;
+	height: 32px;
+	line-height: 32px;
+	font-size: 15px;
+	text-indent: 18px;
 }
 
 #account{
@@ -92,10 +93,16 @@ a:hover{
 	position: relative;
 }
 .captcha-input{
-	width: 133px;
+	width: 101px;
+	text-indent: 18px;
+	
+}
+.captcha-box{
+	width: 151px;
 	border: 1px solid #ccc;
-	background-position: 0 -68px;
 	float: left;
+	padding-left: 32px;
+	background: url(../img/login_icon.png) 0 -68px no-repeat;
 }
 .captcha-wrapper img{
 	float: right;
@@ -142,19 +149,6 @@ a:hover{
 	text-align: center;
 	line-height: 32px;
 	display: none;
-}
-
-.error_v{
-	width: 120px;
-	height: 32px;
-	background: #feeac1;
-	border: 1px solid #fcc449;
-	position: relative;
-	right: 1px;
-	top: -7px;
-	color: #ec3c03;
-	text-align: center;
-	line-height: 32px;
 }
 
 

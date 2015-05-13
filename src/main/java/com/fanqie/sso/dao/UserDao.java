@@ -33,7 +33,7 @@ public class UserDao extends BaseDao {
     public Map<String,Object> findUserInfo(String ... params){
         return getJdbcTemplate().queryForMap(this.sql,params);
     }
-    public Map<String,Object> findUserInfoById(String ... params){
-        return  getJdbcTemplate().queryForMap(this.parentSql,params);
+    public Map<String,Object> findUserInfoById(Integer ... params){
+        return  getJdbcTemplate().queryForMap(this.parentSql, params);
     }
 }
