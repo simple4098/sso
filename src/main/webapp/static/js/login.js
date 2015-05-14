@@ -47,12 +47,9 @@ $(function(){
 				}
 			}
 		})
-
-		// 验证码
-		function refresh(obj){
-			obj.src = "<c:url value='/randomImg?'/>"+Math.random();
-		}
 	}();
-
-
 })
+// 验证码
+function refresh(obj){
+	obj.src = "/randomImg?"+Math.random();
+}
