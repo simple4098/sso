@@ -45,7 +45,7 @@
 						</c:if>
 						<c:if test="${empty sessionScope.openIdLocalId}">
 							<spring:message code="screen.welcome.label.netid.accesskey" var="userNameAccessKey" />
-							<formF:input cssClass="login-input" cssErrorClass="error" placeholder="登录账号/手机号" id="username"  size="15" tabindex="1"
+							<formF:input cssClass="login-input" cssErrorClass="error"  placeholder="登录账号/手机号" id="username"  size="15" tabindex="1"
 										 accesskey="${userNameAccessKey}"  path="username" autocomplete="false" htmlEscape="true" />
 							<div id="mobile_tip" class="tip">账户名必须填写！</div>
 						</c:if>

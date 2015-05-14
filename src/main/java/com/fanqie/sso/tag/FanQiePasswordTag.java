@@ -15,7 +15,15 @@ import javax.servlet.jsp.JspException;
 public class FanQiePasswordTag   extends FanQieInputTag {
 
     private boolean showPassword = false;
+    private String value;
 
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
 
     /**
      * Is the password value to be rendered?
@@ -59,7 +67,9 @@ public class FanQiePasswordTag   extends FanQieInputTag {
         if (this.showPassword) {
             super.writeValue(tagWriter);
         } else {
-            tagWriter.writeAttribute("value", processFieldValue(getName(), "", getType()));
+            String value = getDisplayString(getBoundValue(), getPropertyEditor());
+            /*tagWriter.writeAttribute("value", processFieldValue(getName(), "", getType()));*/
+            tagWriter.writeAttribute("value", value);
         }
     }
 }
