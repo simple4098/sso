@@ -140,6 +140,11 @@
           p:sessionCountWarnThreshold="100000" />
     </util:list>
 
+    <bean id="kryoTranscoder"
+          class="org.jasig.cas.ticket.registry.support.kryo.KryoTranscoder" init-method="initialize">
+        <!-- initialBufferSize -->
+        <constructor-arg index="0" value="8192" /></bean>
+
     <!--加入数据源配置-->
     <beans profile="dev">
             <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
@@ -160,17 +165,27 @@
                 <property name="removeAbandonedTimeout" value="1800" />
                 <property name="validationQuery" value="select 1"/>
             </bean>
-           <bean id="configuration" class="com.fanqie.sso.common.Configuration">
+           <bean  class="com.fanqie.sso.common.Configuration">
                <property name="webHost" value="http://192.168.1.158"/>
                <property name="registerUrl" value="http://192.168.1.158/public/view/home/registe.html"/>
            </bean>
+        <bean id="memcachedClient" class="net.spy.memcached.spring.MemcachedClientFactoryBean"
+              p:servers="192.168.1.158:22222"
+              p:protocol="BINARY"
+              p:locatorType="CONSISTENT"
+              p:failureMode="Redistribute"
+              p:transcoder-ref="kryoTranscoder">
+            <property name="hashAlg">
+                <util:constant static-field="net.spy.memcached.DefaultHashAlgorithm.FNV1_64_HASH" />
+            </property>
+        </bean>
     </beans>
     <beans profile="production">
         <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
             <property name="driverClassName" value="org.postgresql.Driver"/>
-            <property name="url" value="jdbc:postgresql://192.168.1.158:5432/tomato_db1"/>
+            <property name="url" value="jdbc:postgresql://10.163.227.13:9999/tomato_test"/>
             <property name="username" value="ota1"/>
-            <property name="password" value="ota1"/>
+            <property name="password" value="ota@fanqie.COM888"/>
             <property name="maxWait" value="1000" />
             <property name="initialSize" value="5" />
             <property name="maxActive" value="20" />
@@ -179,10 +194,19 @@
             <property name="removeAbandoned" value="true" />
             <property name="removeAbandonedTimeout" value="1800" />
         </bean>
-        <bean id="configuration" class="com.fanqie.sso.common.Configuration">
+        <bean  class="com.fanqie.sso.common.Configuration">
             <property name="webHost" value="http://www.fanqiele.com"/>
             <property name="registerUrl" value="http://www.fanqiele.com/registe.html"/>
         </bean>
-
+        <bean id="memcachedClient" class="net.spy.memcached.spring.MemcachedClientFactoryBean"
+              p:servers="10.144.144.19:22222"
+              p:protocol="BINARY"
+              p:locatorType="CONSISTENT"
+              p:failureMode="Redistribute"
+              p:transcoder-ref="kryoTranscoder">
+            <property name="hashAlg">
+                <util:constant static-field="net.spy.memcached.DefaultHashAlgorithm.FNV1_64_HASH" />
+            </property>
+        </bean>
     </beans>
 </beans>

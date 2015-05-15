@@ -112,19 +112,5 @@
 
     <!-- The scheduler bean wires up any triggers that define scheduled tasks -->
     <bean id="scheduler" class="org.jasig.cas.util.AutowiringSchedulerFactoryBean"/>
-    <bean id="memcachedClient" class="net.spy.memcached.spring.MemcachedClientFactoryBean"
-          p:servers="192.168.1.158:22222"
-          p:protocol="BINARY"
-          p:locatorType="CONSISTENT"
-          p:failureMode="Redistribute"
-          p:transcoder-ref="kryoTranscoder">
-        <property name="hashAlg">
-            <util:constant static-field="net.spy.memcached.DefaultHashAlgorithm.FNV1_64_HASH" />
-        </property>
-    </bean>
 
-    <bean id="kryoTranscoder"
-          class="org.jasig.cas.ticket.registry.support.kryo.KryoTranscoder" init-method="initialize">
-        <!-- initialBufferSize -->
-        <constructor-arg index="0" value="8192" /></bean>
 </beans>

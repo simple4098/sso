@@ -24,7 +24,7 @@
 <div id="head_wrap">
 	<div id="head">
 		<div class="wid1000">
-			<em class="icon"></em>
+			<a  href="http://www.fanqiele.com"><em class="icon"></em></a>
 		</div>
 	</div>
 </div>
