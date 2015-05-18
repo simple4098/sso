@@ -39,7 +39,13 @@ public class UserInfoController extends AbstractController {
         if ("fanQieST".equals(tonKent)) {
             Map<String, Object> userInfo = userDao.findUserInfo(userName, userName);
             String parentMobile = "";
+            String innName = "";
             if (userInfo!=null){
+                Integer innId =  (Integer)userInfo.get("inn_id");
+                if (innId!=null){
+                    Map<String, Object> innInfo = userDao.findInnInfoById(innId);
+                    innName = (String)innInfo.get("name");
+                }
                 Integer pId = (Integer)userInfo.get("parent_id");
                 Map<String, Object> parentMap = null;
                 if (pId!=null){
@@ -49,6 +55,7 @@ public class UserInfoController extends AbstractController {
                     parentMobile = (String)userInfo.get("mobile");
                 }
                 userInfo.put("parentMobile",parentMobile);
+                userInfo.put("innName",innName);
             }
             JSONObject jsonObject = JSONObject.fromObject(userInfo);
             response.setContentType("json/html;charset=UTF-8");

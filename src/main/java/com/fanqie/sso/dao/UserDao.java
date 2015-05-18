@@ -13,6 +13,7 @@ public class UserDao extends BaseDao {
     private String sql;
 
     private String parentSql;
+    private String innSql;
 
     public String getSql() {
         return sql;
@@ -30,10 +31,22 @@ public class UserDao extends BaseDao {
         this.parentSql = parentSql;
     }
 
+    public String getInnSql() {
+        return innSql;
+    }
+
+    public void setInnSql(String innSql) {
+        this.innSql = innSql;
+    }
+
     public Map<String,Object> findUserInfo(String ... params){
         return getJdbcTemplate().queryForMap(this.sql,params);
     }
     public Map<String,Object> findUserInfoById(Integer ... params){
         return  getJdbcTemplate().queryForMap(this.parentSql, params);
+    }
+
+    public Map<String,Object> findInnInfoById(Integer ... params){
+        return  getJdbcTemplate().queryForMap(this.innSql, params);
     }
 }
