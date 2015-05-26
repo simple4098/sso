@@ -34,7 +34,7 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
     <bean id="userDao" class="com.fanqie.sso.dao.UserDao" parent="baseDao">
-        <property name="sql" value="select * from tomato_inn_admin where mobile=? OR user_code=? and status=2" />
+        <property name="sql" value="select * from tomato_inn_admin where (mobile=? OR user_code=?) and status=2" />
         <property name="parentSql" value="select * from tomato_inn_admin where id=?" />
         <property name="innSql" value="select * from tomato_inn where id=?" />
     </bean>
