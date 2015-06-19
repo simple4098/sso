@@ -15,6 +15,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="免费客栈系统">
 	<meta name="author" content="">
+	<meta name="renderer" content="webkit">
 	<link rel="shortcut icon" type="image/ico" href="http://assets.fanqiele.com/1.0.8/images/favicon.ico" />
 	<link type="text/css" rel="stylesheet" href="http://assets.fanqiele.com/1.0.8/pkg/common.css">
 	<link rel="stylesheet" href="/static/css/login.css">
@@ -56,9 +57,12 @@
 									   path="password" placeholder="密码"  accesskey="${passwordAccessKey}" autocomplete="false" htmlEscape="true" />
 						<div id="password_tip" class="tip">密码必须填写！</div>
 					</div>
+
 					<div class="captcha-wrapper">
 						<div class="captcha-box" id="captcha">
-							<input  class="login-input captcha-input" name="code" type="text" placeholder="输入验证码">
+							<%--<formF:input cssClass="login-input" cssErrorClass="error"  placeholder="输入验证码" id="code"   size="15" tabindex="1"
+										 path="code"   autocomplete="false" htmlEscape="true" />--%>
+							<input tabindex="3"  class="login-input captcha-input" name="code" type="text" placeholder="输入验证码">
 						</div>
 						<img id="captcha_img" src="/randomImg"  title="看不清楚?点击更换验证码" onclick="javascript:refresh(this);" class="m">
 						<div id="captcha_tip" class="tip">验证码必须填写！</div>
