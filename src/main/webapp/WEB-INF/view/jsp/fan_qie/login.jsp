@@ -24,6 +24,9 @@
 <!-- head -->
 <div id="head_wrap">
 	<div id="head">
+		<div class="head-notice">想知道客栈民宿新玩法么？！7月18日，精品客栈民宿论坛三亚站，抢票火热进行中，
+			<a href="http://www.huodongxing.com/event/8288930670100" target="_blank">点击了解详情>>></a>
+		</div>
 		<div class="wid1000">
 			<a  href="http://www.fanqiele.com"><em class="icon"></em></a>
 		</div>

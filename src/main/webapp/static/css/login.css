@@ -1,4 +1,14 @@
 @charset "UTF-8";
+.head-notice {
+	margin-top: -10px;
+	background: #feffc8;
+	text-align: center;
+}
+
+.head-notice>a {
+	color: #d81d0d;
+	text-decoration: underline;
+}
 /* 公共 */
 .icon {
   background-image: url(../img/home_icons.png);
