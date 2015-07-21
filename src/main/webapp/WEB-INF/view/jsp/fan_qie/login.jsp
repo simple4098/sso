@@ -24,8 +24,9 @@
 <!-- head -->
 <div id="head_wrap">
 	<div id="head">
-		<div class="head-notice">想知道客栈民宿新玩法么？！7月18日，精品客栈民宿论坛三亚站，抢票火热进行中，
-			<a href="http://www.huodongxing.com/event/8288930670100" target="_blank">点击了解详情>>></a>
+		<div class="head-notice">
+			通知：番茄来了系统将于2015年7月22日凌晨 00:30-06:00 升级维护，上线新版本，
+			<a href="http://note.youdao.com/share/?id=cf0db3b427f5cdf4388f85bcb26a5844&type=note" target="_blank">点击了解详情>>></a>
 		</div>
 		<div class="wid1000">
 			<a  href="http://www.fanqiele.com"><em class="icon"></em></a>
@@ -86,7 +87,9 @@
 <div id="foot">
 	<div class="wid1000" style="width: 670px;text-align: center;">
 		<div class="contact-index">
-			<em class="icon icon-tele"></em>咨询热线：4000-230-190<a href="tencent://message/?uin=1070375586&Site=1070375586&Menu=yes"><em class="icon icon-qq-index"><img src="/static/img/index_qq.png" alt="qq"></em></a><em class="icon icon-wx-index"><img src="/static/img/index_wx.png" alt="微信"></em><a target="_blank" href="http://weibo.com/fanqielaile"><em class="icon icon-weibo-index"></em></a>
+			<em class="icon icon-tele"></em>咨询热线：4000-230-190
+			<a href="tencent://message/?Menu=yes&amp;amp;uin=938062840&amp;amp;Service=58&amp;amp;SigT=A7F6FEA02730C9883990CD5D19271A46BE22B2CAAC936E523D384B6957A1C4F2A81D18D3D1345E30702F32987DDF42DDEBBD265CCA3BCFBA6A8BC3D03220A437002CDBCC1FD2E1BCD50ADA559E6C8EFF870DACE6D1A6A4B268DBDB94AE9AFCD3BC2098B73D5927489469EF574FC66F15FD27DC8AA2A058CE&amp;amp;SigU=30E5D5233A443AB24DED9B7AAE8FC1C725F5D2DD81A867220803EEEEB9CC3A0B1F58A62F0E376672B4C1CD37136B0F453C33709FDD2AE1F7450D4A551DCD637964B7BBA89BF9BB8B">
+			<em class="icon icon-qq-index"><img src="/static/img/index_qq.png" alt="qq"></em></a><em class="icon icon-wx-index"><img src="/static/img/index_wx.png" alt="微信"></em><a target="_blank" href="http://weibo.com/fanqielaile"><em class="icon icon-weibo-index"></em></a>
 		</div>
 		<ul class="fl fl-first">
 			<li><a href="http://www.fanqiele.com/about.html">关于我们</a></li>
