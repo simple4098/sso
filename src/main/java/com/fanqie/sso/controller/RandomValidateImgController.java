@@ -23,7 +23,7 @@ import java.util.Random;
 public class RandomValidateImgController extends AbstractController {
     private  static  final Logger log =   Logger.getLogger(RandomValidateImgController.class);
     private static Random random = new Random();
-    private static String randString = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";// 随机产生的字符串
+    private static String randString = "23456789ABCDEFGHJKMNPQRSTUVWXYZ";// 随机产生的字符串
 
     private static int width = 80;// 图片宽
     private static int height = 26;// 图片高
