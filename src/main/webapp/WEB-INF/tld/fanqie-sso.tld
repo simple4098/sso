@@ -27,5 +27,10 @@
     <function-class>com.fanqie.sso.function.FanQieFunction</function-class>
     <function-signature>java.lang.String obtRegisterUrl()</function-signature>
   </function>
+  <function>
+    <name>forgetPassword</name>
+    <function-class>com.fanqie.sso.function.FanQieFunction</function-class>
+    <function-signature>java.lang.String forgetPassword()</function-signature>
+  </function>
 
 </taglib>

@@ -2,10 +2,12 @@ $(function(){
 	var message = $("#error_v").text();
 	if("密码错误"==message){
 		$("#password_tip").css("display","block").html(message);
-	}else if("用户名错误或待审核中"==message){
+	}else if("用户名有误,请您联系管理员"==message){
 		$("#mobile_tip").css("display","block").html(message);
 	}else if("验证码错误"==message || "验证码必填"==message){
 		$("#captcha_tip").css("display","block").html(message);
+	}else if("用户待审核中"==message){
+		$("#mobile_tip").css("display","block").html(message);
 	}
 
 	;!function () {

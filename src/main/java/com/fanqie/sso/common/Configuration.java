@@ -10,8 +10,16 @@ package com.fanqie.sso.common;
 public class Configuration {
     private static String WEB_HOST="";
     private static String REGISTER_URL="";
+    private static String forgetPassword="";
 
 
+    public static   String getForgetPassword() {
+        return forgetPassword;
+    }
+
+    public  void setForgetPassword(String forgetPassword) {
+        Configuration.forgetPassword = forgetPassword;
+    }
 
     public  void setWebHost(String webHost) {
         Configuration.WEB_HOST = webHost;

@@ -14,7 +14,7 @@ import java.security.NoSuchAlgorithmException;
  */
 public class FanQiePasswordEncoder  implements PasswordEncoder {
     private  static  final Logger log =   Logger.getLogger(FanQiePasswordEncoder.class);
-    @Override
+
     public String encode(String password) {
         MessageDigest md;
         try {

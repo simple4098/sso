@@ -63,6 +63,11 @@ public class FanQieFunction {
         return  Configuration.getRegisterUrl();
     }
 
+    //忘记密码跳转页面
+    public static String forgetPassword(){
+        return  Configuration.getForgetPassword();
+    }
+
     /**
      * 解码跳转的url
      */

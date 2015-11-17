@@ -28,19 +28,17 @@
 			通知：番茄来了系统将于2015年7月22日凌晨 00:30-06:00 升级维护，上线新版本，
 			<a href="http://note.youdao.com/share/?id=cf0db3b427f5cdf4388f85bcb26a5844&type=note" target="_blank">点击了解详情>>></a>
 		</div>--%>
-		<div class="wid1000">
+		<%--<div class="wid1000">
 			<a  href="http://www.fanqiele.com"><em class="icon"></em></a>
-		</div>
+		</div>--%>
 	</div>
 </div>
 <!-- login -->
 <div id="container">
 	<div class="wid1000 wrap-login">
 		<div class="box-login">
-			<div class="login-head">
-				<h3 class="login-title">登录</h3>
-			</div>
 			<div class="login-body">
+				<div class="login-logo"><img src="/static/img/LOGO.png"></div>
 				<formF:form method="post" id="fm1" cssClass="" commandName="${commandName}" htmlEscape="true">
 					<form:errors path="*" id="error_v" cssClass="error_v" element="div" cssStyle="display: none" />
 					<div class="input-wrapper" id="account">
@@ -76,6 +74,7 @@
 						<input type="hidden" name="execution" value="${flowExecutionKey}" />
 						<input type="hidden" name="_eventId" value="submit" />
 					</div>
+					<div class="forgetpassword"><a target="_blank" href="${fanQieFn:forgetPassword()}">忘记密码</a></div>
 					<input class="ui-botton login-botton" name="submit" accesskey="l" value="立即登录" tabindex="4" type="submit" />
 					<a class="ui-botton registe-botton"  href="${fanQieFn:obtRegisterUrl()}">永久免费会员申请</a>
 				</formF:form>
