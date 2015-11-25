@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* 公共 */
 .icon {
-  background-image: url(../img/home_icons.png);
+	background-image: url(../img/home_icons.png);
 }
 .wid1000{
 	width: 1000px;
@@ -14,13 +14,12 @@ a:hover{
 /*头部*/
 #head{
 	position: relative;
-    width: 100%;
-    top: 0;
-    padding: 10px 0;
-    font-size: 14px;
-    background-color: #F2FAFC;
-    z-index: 10;
-    height: 54px;
+	width: 100%;
+	top: 0;
+	font-size: 14px;
+	background-color: #DCEDE7;
+	z-index: 10;
+	height: 50px;
 }
 #head em{
 	float: left;
@@ -31,8 +30,8 @@ a:hover{
 
 /* 登陆部分 */
 #container{
-	height: 556px;
-	background: url(../img/login.jpg);
+	height: 576px;
+	background: url(../img/login.png);
 }
 .wrap-login{
 	height: 556px;
@@ -40,11 +39,9 @@ a:hover{
 .box-login{
 	width: 316px;
 	position: absolute;
-	top: 0;
 	right: 114px;
 	background: #fff;
 	border: 1px solid #e1e7e9;
-	box-shadow: 0 0 5px #e8eef0;
 }
 .login-head{
 	padding: 8px 0;
@@ -53,27 +50,26 @@ a:hover{
 }
 .login-title{
 	font-size: 14px;
-  	text-align: left;
-  	color: #000;
-  	padding-left: 22px;
+	text-align: left;
+	color: #000;
+	padding-left: 22px;
 }
 .login-body{
 	width: 256px;
 	margin: 0 auto;
 }
 .input-wrapper{
-	margin-bottom: 19px;
+	margin-bottom: 16px;
 	width: 256px;
-	height: 44px;
 	position: relative;
 	background-repeat: no-repeat;
 }
 .login-input{
 	border: 1px solid #cccccc;
-    box-shadow: 1px 1px 1px #c1c1c1 inset;
-    font-size: 16px;
-    height: 44px;
-    padding: 0 12px;
+	box-shadow: 1px 1px 1px #c1c1c1 inset;
+	font-size: 16px;
+	height: 44px;
+	padding: 0 12px;
 	width: 232px;
 	height: 36px;
 	line-height: 36px;
@@ -94,7 +90,7 @@ a:hover{
 }
 .captcha-input{
 	width: 120px;
-	
+
 }
 .captcha-box{
 	float: left;
@@ -113,42 +109,41 @@ a:hover{
 }
 .ui-botton{
 	display: inline-block;
-    line-height: 40px;
-    text-align: center;
-    margin-bottom: 19px;
-    border-radius: 3px;
-    border: 0;  
-    outline: 0;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: normal;
-    text-decoration: none;
+	line-height: 40px;
+	text-align: center;
+	margin-bottom: 16px;
+	border-radius: 3px;
+	border: 0;
+	outline: 0;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: normal;
+	text-decoration: none;
 }
 .login-botton{
 	width: 256px;
-    height: 40px;
-    line-height: 40px;
-    color: #fff;
-    background-color: #CF0110;
-    border: 1px solid #95281B;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	background-color: #CF0110;
+	border: 1px solid #95281B;
 }
 .registe-botton{
 	width: 256px;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid #35717C;
-    color: #fff;
-    background-color: #59ABE3;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #35717C;
+	color: #fff;
+	background-color: #59ABE3;
 }
 .tip{
-	left: 266px;
-	width: 159px;
+	width: 120px;
 	height: 32px;
 	background: #feeac1;
 	border: 1px solid #fcc449;
 	position: absolute;
 	right: -135px;
-	top: 1px;
+	top: 5px;
 	color: #ec3c03;
 	text-align: center;
 	line-height: 32px;
@@ -156,21 +151,21 @@ a:hover{
 }
 .forgetpassword{
 	padding-bottom: 12px;
-    float: right;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 22px;
-    width: 100%;
+	float: right;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 16px;
+	width: 100%;
 }
 .forgetpassword > a{
 	float: right;
-    color: #59ABE3;
-    cursor: pointer;
+	color: #59ABE3;
+	cursor: pointer;
 }
 .login-logo{
 	text-align: center;
-    padding: 20px 0;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 24px;
+	padding: 25px 0 20px 0;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
 }
 
 
@@ -261,7 +256,7 @@ a:hover{
 }
 .icon-qq-index:hover{
 	background-position:-57px -455px;
-	cursor: pointer; 
+	cursor: pointer;
 }
 .icon-wx-index{
 	position: relative;
