@@ -169,7 +169,7 @@
            <bean  class="com.fanqie.sso.common.Configuration">
                <property name="webHost" value="http://192.168.1.159:8686"/>
                <property name="registerUrl" value="http://192.168.1.159:8686/public/view/home/registe.html"/>
-               <property name="forgetPassword" value="http://192.168.1.159:8686/public/view/home/retrievePassword.html"/>
+               <property name="forgetPassword" value="http://192.168.1.159:8686/public/view/home/rp.html"/>
            </bean>
         <bean id="memcachedClient" class="net.spy.memcached.spring.MemcachedClientFactoryBean"
               p:servers="192.168.1.159:22222"
@@ -203,7 +203,7 @@
         <bean  class="com.fanqie.sso.common.Configuration">
             <property name="webHost" value="http://pms.test.fanqielaile.com"/>
             <property name="registerUrl" value="http://pms.test.fanqielaile.com/registe.html"/>
-            <property name="forgetPassword" value="http://pms.test.fanqielaile.com/retrievePassword.html"/>
+            <property name="forgetPassword" value="http://pms.test.fanqielaile.com/rp.html"/>
         </bean>
         <bean id="memcachedClient" class="net.spy.memcached.spring.MemcachedClientFactoryBean"
               p:servers="10.144.144.19:22222"
@@ -235,7 +235,7 @@
         <bean  class="com.fanqie.sso.common.Configuration">
             <property name="webHost" value="http://www.fanqiele.com"/>
             <property name="registerUrl" value="http://www.fanqiele.com/registe.html"/>
-            <property name="forgetPassword" value="http://www.fanqiele.com/retrievePassword.html"/>
+            <property name="forgetPassword" value="http://www.fanqiele.com/rp.html"/>
         </bean>
         <bean id="memcachedClient" class="net.spy.memcached.spring.MemcachedClientFactoryBean"
               p:servers="10.144.144.19:11211"
