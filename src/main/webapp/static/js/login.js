@@ -1,4 +1,17 @@
 $(function(){
+	
+	//客栈个性化
+	$.get("/test?innId=141").done(function(json) {
+		if(json){
+			var obj = JSON.parse(json)
+			var pms_domain = obj.pms_domain
+			$("#login_header_title").text(obj.login_header_title)
+			$("#login_header_img").prop("src", pms_domain + obj.login_header_img)
+			$("#container").css("background-image","url(" + pms_domain + obj.login_main_img + ")")
+			$("#login_footer_content").text(obj.login_footer_content)
+		}
+	});
+	
 	var message = $("#error_v").text();
 	if("密码错误"==message){
 		$("#password_tip").css("display","block").html(message);

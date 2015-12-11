@@ -168,6 +168,7 @@
     <servlet-name>cas</servlet-name>
     <url-pattern>/authorizationFailure.html</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
     <url-pattern>/randomImg</url-pattern>
@@ -176,6 +177,11 @@
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
     <url-pattern>/userInfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>cas</servlet-name>
+    <url-pattern>/test</url-pattern>
   </servlet-mapping>
 
   <session-config>

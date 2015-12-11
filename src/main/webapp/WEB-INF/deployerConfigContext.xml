@@ -37,6 +37,7 @@
         <property name="sql" value="select * from tomato_inn_admin where (mobile=? OR user_code=?) and status=2" />
         <property name="parentSql" value="select * from tomato_inn_admin where id=?" />
         <property name="innSql" value="select * from tomato_inn where id=?" />
+        <property name="personalizedSql" value="select ip.* from tomato_inn_personalized  ip inner join tomato_inn_to_personalized itp on ip.id = itp.personalized_id where itp.inn_id = ?" />
     </bean>
 
 
@@ -167,9 +168,9 @@
                 <property name="validationQuery" value="select 1"/>
             </bean>
            <bean  class="com.fanqie.sso.common.Configuration">
-               <property name="webHost" value="http://192.168.1.159:8686"/>
-               <property name="registerUrl" value="http://192.168.1.159:8686/public/view/home/registe.html"/>
-               <property name="forgetPassword" value="http://192.168.1.159:8686/public/view/home/rp.html"/>
+               <property name="webHost" value="http://pms.local.fanqiele.com"/>
+               <property name="registerUrl" value="http://pms.local.fanqiele.com:8686/public/view/home/registe.html"/>
+               <property name="forgetPassword" value="http://pms.local.fanqiele.com:8686/public/view/home/rp.html"/>
            </bean>
         <bean id="memcachedClient" class="net.spy.memcached.spring.MemcachedClientFactoryBean"
               p:servers="192.168.1.159:22222"

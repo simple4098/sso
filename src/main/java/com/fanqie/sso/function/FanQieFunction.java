@@ -42,7 +42,7 @@ public class FanQieFunction {
     public static String obtDefaultWebIndex(){
         //进行URL 编码
         try {
-            return URLEncoder.encode(obtDefaultWebHost()+"/inns","UTF-8");
+            return URLEncoder.encode(obtDefaultWebHost()+"/index","UTF-8");
         } catch (UnsupportedEncodingException e) {
             log.error("URL 编码异常:"+e);
         }

@@ -38,7 +38,7 @@
 	<div class="wid1000 wrap-login">
 		<div class="box-login">
 			<div class="login-body">
-				<div class="login-logo"><img src="/static/img/LOGO.png"></div>
+				<div class="login-logo"><span id="login_header_title"></span><img id="login_header_img" src="/static/img/LOGO.png"></div>
 				<formF:form method="post" id="fm1" cssClass="" commandName="${commandName}" htmlEscape="true">
 					<form:errors path="*" id="error_v" cssClass="error_v" element="div" cssStyle="display: none" />
 					<div class="input-wrapper" id="account">
@@ -95,7 +95,7 @@
 			<li><a href="http://www.fanqiele.com/contact.html">联系我们</a></li>
 		</ul>
 		<ul class="fr">
-			<li>成都番茄来了科技有限公司</li>
+			<li id="login_footer_content">成都番茄来了科技有限公司</li>
 			<li>蜀ICP备13017483号</li>
 			<li>推荐浏览器：<a style="color: #f4ae5b;" href="http://w.x.baidu.com/alading/anquan_soft_down_b/14744">谷歌浏览器Chrome</a></li>
 		</ul>
