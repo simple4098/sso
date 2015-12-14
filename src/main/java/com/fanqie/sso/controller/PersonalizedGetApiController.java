@@ -35,7 +35,7 @@ public class PersonalizedGetApiController extends AbstractController {
 			throws Exception {
 		Map<String, Object> result = new HashMap<String, Object>();
 		// 请求域名前缀，根据其获取所属客栈id
-		String innId = request.getHeader("innId");
+		String innId = request.getParameter("innId");
 		response.setContentType("json/html;charset=UTF-8");
 		if (StringUtils.isNotBlank(innId)) {
 			Map<String, Object> personalized = userDao.findPersonalizedByInnId(Integer.parseInt(innId));
