@@ -37,9 +37,9 @@
         <property name="sql" value="select * from tomato_inn_admin where (mobile=? OR user_code=?) and status=2" />
         <property name="parentSql" value="select * from tomato_inn_admin where id=?" />
         <property name="innSql" value="select * from tomato_inn where id=?" />
-        <property name="personalizedSql" value="select ip.* from tomato_inn_personalized  ip inner join tomato_inn_to_personalized itp on ip.id = itp.personalized_id where itp.inn_id = ?" />
+        <property name="personalizedGetSql" value="select ip.* from tomato_inn_personalized ip inner join tomato_inn_to_personalized itp on ip.id = itp.personalized_id where itp.inn_id = ?" />
+        <property name="personalizedSetSql" value="insert into tomato_inn_to_personalized(inn_id,domain_prefix) values (?,?)" />
     </bean>
-
 
     <!-- Required for proxy ticket mechanism. -->
     <bean id="proxyAuthenticationHandler"

@@ -181,7 +181,12 @@
   
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
-    <url-pattern>/test</url-pattern>
+    <url-pattern>/getPersonalized</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>cas</servlet-name>
+    <url-pattern>/setPersonalized</url-pattern>
   </servlet-mapping>
 
   <session-config>

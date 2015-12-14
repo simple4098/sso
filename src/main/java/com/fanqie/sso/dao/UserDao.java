@@ -1,6 +1,5 @@
 package com.fanqie.sso.dao;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -14,7 +13,8 @@ public class UserDao extends BaseDao {
 	private String sql;
 	private String parentSql;
 	private String innSql;
-	private String personalizedSql;
+	private String personalizedGetSql;
+	private String personalizedSetSql;
 
 	public String getSql() {
 		return sql;
@@ -40,12 +40,20 @@ public class UserDao extends BaseDao {
 		this.innSql = innSql;
 	}
 
-	public String getPersonalizedSql() {
-		return personalizedSql;
+	public String getPersonalizedGetSql() {
+		return personalizedGetSql;
 	}
 
-	public void setPersonalizedSql(String personalizedSql) {
-		this.personalizedSql = personalizedSql;
+	public void setPersonalizedGetSql(String personalizedGetSql) {
+		this.personalizedGetSql = personalizedGetSql;
+	}
+
+	public String getPersonalizedSetSql() {
+		return personalizedSetSql;
+	}
+
+	public void setPersonalizedSetSql(String personalizedSetSql) {
+		this.personalizedSetSql = personalizedSetSql;
 	}
 
 	public Map<String, Object> findUserInfo(String... params) {
@@ -62,11 +70,14 @@ public class UserDao extends BaseDao {
 
 	public Map<String, Object> findPersonalized(Integer... params) {
 		try {
-			return getJdbcTemplate().queryForMap(this.personalizedSql, params);
+			return getJdbcTemplate().queryForMap(this.personalizedGetSql, params);
 		} catch (Exception e) {
 			return null;
 		}
+	}
 
+	public void setPersonalized(Object... params) {
+		getJdbcTemplate().update(personalizedSetSql, params);
 	}
 
 }
