@@ -81,8 +81,9 @@
 				<prop key="/statistics">statisticsController</prop>
 				<prop key="/randomImg">randomValidateImgController</prop>
 				<prop key="/userInfo">userInfoController</prop>
-				<prop key="/getPersonalized">personalizedController</prop>
-				<prop key="/setPersonalized">personalizedApiController</prop>
+				<prop key="/getPersonalizedByDomainPrefix">personalizedController</prop>
+				<prop key="/setPersonalized">domainPrefixBoundApiController</prop>
+				<prop key="/getPersonalizedByInnId">personalizedGetApiController</prop>
 			</util:properties>
 		</property>
 		<!-- uncomment this to enable sending PageRequest events. <property name="interceptors"> 
@@ -101,7 +102,10 @@
 	<bean id="personalizedController" class="com.fanqie.sso.controller.PersonalizedController">
 		<property name="userDao" ref="userDao" />
 	</bean>
-	<bean id="personalizedApiController" class="com.fanqie.sso.controller.PersonalizedApiController">
+	<bean id="domainPrefixBoundApiController" class="com.fanqie.sso.controller.DomainPrefixBoundApiController">
+		<property name="userDao" ref="userDao" />
+	</bean>
+	<bean id="personalizedGetApiController" class="com.fanqie.sso.controller.PersonalizedGetApiController">
 		<property name="userDao" ref="userDao" />
 	</bean>
 

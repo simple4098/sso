@@ -13,7 +13,8 @@ public class UserDao extends BaseDao {
 	private String sql;
 	private String parentSql;
 	private String innSql;
-	private String personalizedGetSql;
+	private String personalizedGetByDomainPrefixSql;
+	private String personalizedGetByInnIdSql;
 	private String personalizedSetSql;
 
 	public String getSql() {
@@ -40,12 +41,20 @@ public class UserDao extends BaseDao {
 		this.innSql = innSql;
 	}
 
-	public String getPersonalizedGetSql() {
-		return personalizedGetSql;
+	public String getPersonalizedGetByDomainPrefixSql() {
+		return personalizedGetByDomainPrefixSql;
 	}
 
-	public void setPersonalizedGetSql(String personalizedGetSql) {
-		this.personalizedGetSql = personalizedGetSql;
+	public void setPersonalizedGetByDomainPrefixSql(String personalizedGetByDomainPrefixSql) {
+		this.personalizedGetByDomainPrefixSql = personalizedGetByDomainPrefixSql;
+	}
+
+	public String getPersonalizedGetByInnIdSql() {
+		return personalizedGetByInnIdSql;
+	}
+
+	public void setPersonalizedGetByInnIdSql(String personalizedGetByInnIdSql) {
+		this.personalizedGetByInnIdSql = personalizedGetByInnIdSql;
 	}
 
 	public String getPersonalizedSetSql() {
@@ -68,9 +77,17 @@ public class UserDao extends BaseDao {
 		return getJdbcTemplate().queryForMap(this.innSql, params);
 	}
 
-	public Map<String, Object> findPersonalized(Integer... params) {
+	public Map<String, Object> findPersonalizedByDomainPrefix(String... params) {
 		try {
-			return getJdbcTemplate().queryForMap(this.personalizedGetSql, params);
+			return getJdbcTemplate().queryForMap(this.personalizedGetByDomainPrefixSql, params);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+	
+	public Map<String, Object> findPersonalizedByInnId(Integer... params) {
+		try {
+			return getJdbcTemplate().queryForMap(this.personalizedGetByInnIdSql, params);
 		} catch (Exception e) {
 			return null;
 		}

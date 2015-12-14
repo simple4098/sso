@@ -181,7 +181,12 @@
   
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
-    <url-pattern>/getPersonalized</url-pattern>
+    <url-pattern>/getPersonalizedByDomainPrefix</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>cas</servlet-name>
+    <url-pattern>/getPersonalizedByInnId</url-pattern>
   </servlet-mapping>
   
   <servlet-mapping>

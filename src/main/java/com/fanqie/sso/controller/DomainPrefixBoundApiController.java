@@ -23,7 +23,7 @@ import com.fanqie.sso.dao.UserDao;
  *
  */
 @Controller
-public class PersonalizedApiController extends AbstractController {
+public class DomainPrefixBoundApiController extends AbstractController {
 
 	@NotNull
 	private UserDao userDao;
@@ -31,23 +31,21 @@ public class PersonalizedApiController extends AbstractController {
 	@Override
 	@ResponseBody
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		Map<String, Integer> result = new HashMap<>();
+		Map<String, Object> result = new HashMap<String, Object>();
 		String innId = request.getParameter("innId");
 		String domainPrefix = request.getParameter("domainPrefix");
 		response.setContentType("json/html;charset=UTF-8");
 		if (StringUtils.isNotBlank(innId) && StringUtils.isNotBlank(domainPrefix)) {
 			userDao.setPersonalized(Integer.parseInt(innId), domainPrefix);
 			result.put(Constants.STATUS, Constants.HTTP_OK);
-			response.getWriter().print(JSONUtils.toJSONString(result));
 		} else {
 			result.put(Constants.STATUS, Constants.HTTP_400);
-			response.getWriter().print(JSONUtils.toJSONString(result));
+			result.put(Constants.MESSAGE, "无效参数！");
 		}
+		response.getWriter().print(JSONUtils.toJSONString(result));
 		return null;
 	}
 	
-	
-
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}

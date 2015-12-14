@@ -30,9 +30,17 @@ public class PersonalizedController extends AbstractController {
 	@Override
 	@ResponseBody
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String innId = request.getParameter("innId");
-		if (StringUtils.isNotBlank(innId)) {
-			Map<String, Object> personalized = userDao.findPersonalized(Integer.parseInt(innId));
+//		String domainPrefix = request.getParameter("domainPrefix");
+		// 请求域名前缀，根据其获取所属客栈id
+		String domainHost = request.getHeader("host");
+		logger.error("----------请求domainHost：" + domainHost);
+		logger.error("----------请求getRemoteHost：" + request.getRemoteHost());
+		logger.error("----------请求getRequestURL：" + request.getRequestURL());
+		logger.error("----------请求getServerName：" + request.getServerName());
+		if (StringUtils.isNotBlank(domainHost)) {
+			String domainPrefix = domainHost.substring(0, domainHost.indexOf("."));
+			logger.error("----------请求域名前缀：" + domainPrefix);
+			Map<String, Object> personalized = userDao.findPersonalizedByDomainPrefix(domainPrefix);
 			if(personalized != null){
 				personalized.put("pms_domain", Configuration.getWebHost());
 				response.setContentType("json/html;charset=UTF-8");
