@@ -1,7 +1,7 @@
 $(function(){
 	
 	//客栈个性化
-	$.get("/getPersonalized").done(function(json) {
+	$.get("/getPersonalizedByDomainPrefix").done(function(json) {
 		if(json){
 			var obj = JSON.parse(json)
 			var pms_domain = obj.pms_domain
