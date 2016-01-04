@@ -3,6 +3,6 @@
 <%
 final String queryString = request.getQueryString();
 String url_ =  FanQieFunction.obtDefaultWebIndex();
-final String url = request.getContextPath() + "/login" + (queryString != null ? "?" + queryString : "?service="+url_);
+final String url = request.getContextPath() + "/login" + (queryString != null ? "?" + queryString : "?service=" + url_ + "&from=index");
 response.sendRedirect(response.encodeURL(url));
 %>

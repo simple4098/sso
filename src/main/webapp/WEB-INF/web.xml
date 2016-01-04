@@ -108,7 +108,7 @@
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
-	
+
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
     <url-pattern>/login</url-pattern>
@@ -133,7 +133,7 @@
     <servlet-name>cas</servlet-name>
     <url-pattern>/p3/serviceValidate</url-pattern>
   </servlet-mapping>
-  
+
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
     <url-pattern>/proxy</url-pattern>
@@ -148,7 +148,7 @@
     <servlet-name>cas</servlet-name>
     <url-pattern>/p3/proxyValidate</url-pattern>
   </servlet-mapping>
-  
+
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
     <url-pattern>/CentralAuthenticationService</url-pattern>
@@ -168,7 +168,7 @@
     <servlet-name>cas</servlet-name>
     <url-pattern>/authorizationFailure.html</url-pattern>
   </servlet-mapping>
-  
+
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
     <url-pattern>/randomImg</url-pattern>
@@ -178,17 +178,17 @@
     <servlet-name>cas</servlet-name>
     <url-pattern>/userInfo</url-pattern>
   </servlet-mapping>
-  
+
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
     <url-pattern>/getPersonalizedByDomainPrefix</url-pattern>
   </servlet-mapping>
-  
+
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
     <url-pattern>/getPersonalizedByInnId</url-pattern>
   </servlet-mapping>
-  
+
   <servlet-mapping>
     <servlet-name>cas</servlet-name>
     <url-pattern>/setPersonalized</url-pattern>

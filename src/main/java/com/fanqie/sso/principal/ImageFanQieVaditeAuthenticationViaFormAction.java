@@ -1,11 +1,16 @@
 package com.fanqie.sso.principal;
 
-import com.fanqie.sso.common.Constants;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.validation.constraints.NotNull;
+
 import org.jasig.cas.CentralAuthenticationService;
 import org.jasig.cas.Message;
 import org.jasig.cas.authentication.Credential;
 import org.jasig.cas.authentication.HandlerResult;
-import org.jasig.cas.authentication.UsernamePasswordCredential;
 import org.jasig.cas.authentication.principal.Service;
 import org.jasig.cas.ticket.TicketCreationException;
 import org.jasig.cas.ticket.TicketException;
@@ -23,11 +28,7 @@ import org.springframework.webflow.core.collection.LocalAttributeMap;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.validation.constraints.NotNull;
-import java.util.Map;
+import com.fanqie.sso.common.Constants;
 
 /**
  * DESC :
@@ -142,11 +143,21 @@ public class ImageFanQieVaditeAuthenticationViaFormAction {
                     //logger.warn("验证码检验有误");
                     final String code = "user.core.error";
                     messageContext.addMessage(new MessageBuilder().error().code(code).arg("").defaultText(code).build());
+                    // 当验证失败后，判断参数中是否获否 login-at 参数，如果包含的话则跳转至 login ticket 获取页
+                    String referer = context.getRequestParameters().get("from");
+                    if (!org.apache.commons.lang.StringUtils.isBlank(referer)) {
+                        return newEvent("errorForRemoteRequestor");
+                    }
                     return newEvent(ERROR);
                 }
             }
             return newEvent(SUCCESS);
         } catch (final org.jasig.cas.authentication.AuthenticationException e) {
+        	// 当验证失败后，判断参数中是否获否 login-at 参数，如果包含的话则跳转至 login ticket 获取页
+            String referer = context.getRequestParameters().get("from");
+            if (!org.apache.commons.lang.StringUtils.isBlank(referer)) {
+                return newEvent("authenticationFailureForRemoteRequestor", e);
+            }
             return newEvent(AUTHENTICATION_FAILURE, e);
         } catch (final Exception e) {
             return newEvent(ERROR, e);
