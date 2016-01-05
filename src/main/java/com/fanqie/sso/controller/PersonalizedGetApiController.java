@@ -36,6 +36,7 @@ public class PersonalizedGetApiController extends AbstractController {
 		Map<String, Object> result = new HashMap<String, Object>();
 		// 请求域名前缀，根据其获取所属客栈id
 		String innId = request.getParameter("innId");
+		String callback = request.getParameter("callback");
 		response.setContentType("application/json;charset=UTF-8");
 		if (StringUtils.isNotBlank(innId)) {
 			Map<String, Object> personalized = userDao.findPersonalizedByInnId(Integer.parseInt(innId));
@@ -50,7 +51,7 @@ public class PersonalizedGetApiController extends AbstractController {
 			result.put(Constants.STATUS, Constants.HTTP_400);
 			result.put(Constants.MESSAGE, "无效参数！");
 		}
-		response.getWriter().print(JSONUtils.toJSONString(result));
+		response.getWriter().print(callback + "(" + JSONUtils.toJSONString(result) + ")");
 		return null;
 	}
 

@@ -34,6 +34,7 @@ public class DomainPrefixBoundApiController extends AbstractController {
 		Map<String, Object> result = new HashMap<String, Object>();
 		String innId = request.getParameter("innId");
 		String domainPrefix = request.getParameter("domainPrefix");
+		response.setHeader("Access-Control-Allow-Origin", "*");
 		response.setContentType("application/json;charset=UTF-8");
 		if (StringUtils.isNotBlank(innId) && StringUtils.isNotBlank(domainPrefix)) {
 			userDao.setPersonalized(Integer.parseInt(innId), domainPrefix);
