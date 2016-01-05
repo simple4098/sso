@@ -19,7 +19,7 @@ import com.fanqie.sso.dao.UserDao;
 
 /**
  * 根据客栈id获取客栈个性化配置
- * 
+ *
  * @author momo
  *
  */
@@ -36,7 +36,7 @@ public class PersonalizedGetApiController extends AbstractController {
 		Map<String, Object> result = new HashMap<String, Object>();
 		// 请求域名前缀，根据其获取所属客栈id
 		String innId = request.getParameter("innId");
-		response.setContentType("json/html;charset=UTF-8");
+		response.setContentType("application/json;charset=UTF-8");
 		if (StringUtils.isNotBlank(innId)) {
 			Map<String, Object> personalized = userDao.findPersonalizedByInnId(Integer.parseInt(innId));
 			if (personalized != null) {

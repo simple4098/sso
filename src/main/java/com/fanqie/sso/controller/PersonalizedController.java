@@ -47,7 +47,7 @@ public class PersonalizedController extends AbstractController {
 				Map<String, Object> personalized = userDao.findPersonalizedByDomainPrefix(domainPrefix);
 				if (personalized != null) {
 					personalized.put("pms_domain", Configuration.getWebHost());
-					response.setContentType("json/html;charset=UTF-8");
+					response.setContentType("application/json;charset=UTF-8");
 					response.getWriter().print(JSONUtils.toJSONString(personalized));
 				}
 			}

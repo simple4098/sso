@@ -34,7 +34,7 @@ public class DomainPrefixBoundApiController extends AbstractController {
 		Map<String, Object> result = new HashMap<String, Object>();
 		String innId = request.getParameter("innId");
 		String domainPrefix = request.getParameter("domainPrefix");
-		response.setContentType("json/html;charset=UTF-8");
+		response.setContentType("application/json;charset=UTF-8");
 		if (StringUtils.isNotBlank(innId) && StringUtils.isNotBlank(domainPrefix)) {
 			userDao.setPersonalized(Integer.parseInt(innId), domainPrefix);
 			result.put(Constants.STATUS, Constants.HTTP_OK);
@@ -45,7 +45,7 @@ public class DomainPrefixBoundApiController extends AbstractController {
 		response.getWriter().print(JSONUtils.toJSONString(result));
 		return null;
 	}
-	
+
 	public void setUserDao(UserDao userDao) {
 		this.userDao = userDao;
 	}

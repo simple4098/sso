@@ -74,9 +74,8 @@
 	<script type="text/javascript" src="/static/js/login.js"></script>
 	<script>
 		//客栈个性化
-		$.get("/getPersonalizedByDomainPrefix").done(function(json) {
-			if(json){
-				var obj = JSON.parse(json)
+		$.get("/getPersonalizedByDomainPrefix").done(function(obj) {
+			if(obj){
 				var pms_domain = obj.pms_domain
 				$("#login_header_title").text(obj.login_header_title)
 				$("#login_header_img").prop("src", pms_domain + obj.login_header_img)
