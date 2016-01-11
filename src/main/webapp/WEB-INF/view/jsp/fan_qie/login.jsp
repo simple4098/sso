@@ -23,15 +23,6 @@
 <body>
 <!-- head -->
 <div id="head_wrap">
-	<div id="head">
-		<%--<div class="head-notice">
-			通知：番茄来了系统将于2015年7月22日凌晨 00:30-06:00 升级维护，上线新版本，
-			<a href="http://note.youdao.com/share/?id=cf0db3b427f5cdf4388f85bcb26a5844&type=note" target="_blank">点击了解详情>>></a>
-		</div>--%>
-		<%--<div class="wid1000">
-			<a  href="http://www.fanqiele.com"><em class="icon"></em></a>
-		</div>--%>
-	</div>
 </div>
 <!-- login -->
 <div id="container">

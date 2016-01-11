@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* 公共 */
 .icon {
-	background-image: url(../img/home_icons.png);
+  background-image: url(../img/home_icons.png);
 }
 .wid1000{
 	width: 1000px;
@@ -14,12 +14,12 @@ a:hover{
 /*头部*/
 #head{
 	position: relative;
-	width: 100%;
-	top: 0;
-	font-size: 14px;
-	background-color: #DCEDE7;
-	z-index: 10;
-	height: 50px;
+    width: 100%;
+    top: 0;
+    font-size: 14px;
+    background-color: #DCEDE7;
+    z-index: 10;
+    height: 50px;
 }
 #head em{
 	float: left;
@@ -37,11 +37,13 @@ a:hover{
 	height: 556px;
 }
 .box-login{
-	width: 316px;
-	position: absolute;
-	right: 114px;
-	background: #fff;
-	border: 1px solid #e1e7e9;
+	width: 289px;
+    position: absolute;
+    right: 114px;
+    top: 50px;
+    background: transparent;
+    background-color: rgba(255,255,255,0.4);
+    border: 1px solid #e1e7e9;
 }
 .login-head{
 	padding: 8px 0;
@@ -50,30 +52,29 @@ a:hover{
 }
 .login-title{
 	font-size: 14px;
-	text-align: left;
-	color: #000;
-	padding-left: 22px;
+  	text-align: left;
+  	color: #000;
+  	padding-left: 22px;
 }
 .login-body{
 	width: 256px;
 	margin: 0 auto;
 }
 .input-wrapper{
-	margin-bottom: 16px;
-	width: 256px;
-	position: relative;
-	background-repeat: no-repeat;
+	margin-bottom: 8px;
+    width: 256px;
+    position: relative;
+    background-repeat: no-repeat;
 }
 .login-input{
 	border: 1px solid #cccccc;
-	box-shadow: 1px 1px 1px #c1c1c1 inset;
-	font-size: 16px;
-	height: 44px;
-	padding: 0 12px;
-	width: 232px;
-	height: 36px;
-	line-height: 36px;
-	font-size: 16px;
+    box-shadow: 1px 1px 1px #c1c1c1 inset;
+    font-size: 16px;
+    padding: 0 12px;
+    width: 232px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
 }
 
 #account{
@@ -83,14 +84,14 @@ a:hover{
 	background-position: 0 -34px;
 }
 .captcha-wrapper{
-	margin-bottom: 19px;
+	margin-bottom: 6px;
 	width: 256px;
 	height: 34px;
 	position: relative;
 }
 .captcha-input{
 	width: 120px;
-
+	
 }
 .captcha-box{
 	float: left;
@@ -109,32 +110,41 @@ a:hover{
 }
 .ui-botton{
 	display: inline-block;
-	line-height: 40px;
-	text-align: center;
-	margin-bottom: 16px;
-	border-radius: 3px;
-	border: 0;
-	outline: 0;
-	cursor: pointer;
-	font-size: 16px;
-	font-weight: normal;
-	text-decoration: none;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    border: 0;  
+    outline: 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: none;
 }
 .login-botton{
 	width: 256px;
-	height: 40px;
-	line-height: 40px;
-	color: #fff;
-	background-color: #CF0110;
-	border: 1px solid #95281B;
+    height: 37px;
+    line-height: 37px;
+    color: #fff;
+    background-color: #CF0110;
+    border: 1px solid #95281B;
+}
+.login-botton:hover {
+	background: -webkit-linear-gradient(top,#F2203F 0%, #B60512 100%);
+    background:         linear-gradient(top,#F2203F 0%, #B60512 100%);
 }
 .registe-botton{
 	width: 256px;
-	height: 40px;
-	line-height: 40px;
-	border: 1px solid #35717C;
-	color: #fff;
-	background-color: #59ABE3;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #C2C2C2;
+    color: #4a4a4a;
+    background: -webkit-linear-gradient(top,#FBFEFF 0%, #E8EDF1 100%);
+    background:         linear-gradient(top,#FBFEFF 0%, #E8EDF1 100%);
+}
+.registe-botton:hover {
+    background: -webkit-linear-gradient(top,#FBFEFF 0%, #D7DFE5 100%);
+    background:         linear-gradient(top,#FBFEFF 0%, #D7DFE5 100%);
 }
 .tip{
 	width: 120px;
@@ -143,29 +153,29 @@ a:hover{
 	border: 1px solid #fcc449;
 	position: absolute;
 	right: -135px;
-	top: 5px;
+	top: 0;
 	color: #ec3c03;
 	text-align: center;
 	line-height: 32px;
 	display: none;
 }
 .forgetpassword{
-	padding-bottom: 12px;
-	float: right;
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 16px;
-	width: 100%;
+    padding-bottom: 6px;
+    float: right;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 8px;
+    width: 100%;
 }
 .forgetpassword > a{
 	float: right;
-	color: #59ABE3;
-	cursor: pointer;
+    color: #59ABE3;
+    cursor: pointer;
 }
 .login-logo{
 	text-align: center;
-	padding: 25px 0 20px 0;
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 20px;
+    padding: 15px 0 8px 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
 }
 
 
@@ -225,7 +235,7 @@ a:hover{
 .contact-index{
 	font-size: 20px;
 	margin-top: 10px;
-	margin-bottom: 36px;
+	margin-bottom: 25px;
 }
 .icon-tele{
 	display: inline-block;
@@ -256,7 +266,7 @@ a:hover{
 }
 .icon-qq-index:hover{
 	background-position:-57px -455px;
-	cursor: pointer;
+	cursor: pointer; 
 }
 .icon-wx-index{
 	position: relative;
