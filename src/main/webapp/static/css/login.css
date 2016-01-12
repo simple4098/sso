@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* 公共 */
 .icon {
-	background-image: url(../img/home_icons.png);
+  background-image: url(../img/home_icons.png);
 }
 .wid1000{
 	width: 1000px;
@@ -14,12 +14,12 @@ a:hover{
 /*头部*/
 #head{
 	position: relative;
-	width: 100%;
-	top: 0;
-	font-size: 14px;
-	background-color: #DCEDE7;
-	z-index: 10;
-	height: 50px;
+    width: 100%;
+    top: 0;
+    font-size: 14px;
+    background-color: #DCEDE7;
+    z-index: 10;
+    height: 50px;
 }
 #head em{
 	float: left;
@@ -38,12 +38,12 @@ a:hover{
 }
 .box-login{
 	width: 289px;
-	position: absolute;
-	right: 14px;
-	top: 70px;
-	background: transparent;
-	background-color: rgba(255,255,255,0.4);
-	border: 1px solid #e1e7e9;
+    position: absolute;
+    right: 8%;
+    top: 10%;
+    background: transparent;
+    background-color: rgba(255,255,255,0.4);
+    border: 1px solid #e1e7e9;
 }
 .login-head{
 	padding: 8px 0;
@@ -52,9 +52,9 @@ a:hover{
 }
 .login-title{
 	font-size: 14px;
-	text-align: left;
-	color: #000;
-	padding-left: 22px;
+  	text-align: left;
+  	color: #000;
+  	padding-left: 22px;
 }
 .login-body{
 	width: 256px;
@@ -62,19 +62,25 @@ a:hover{
 }
 .input-wrapper{
 	margin-bottom: 8px;
-	width: 256px;
-	position: relative;
-	background-repeat: no-repeat;
+    width: 256px;
+    position: relative;
+    background-repeat: no-repeat;
 }
 .login-input{
 	border: 1px solid #cccccc;
-	box-shadow: 1px 1px 1px #c1c1c1 inset;
-	font-size: 16px;
-	padding: 0 12px;
-	width: 232px;
-	height: 35px;
-	line-height: 35px;
-	font-size: 14px;
+    box-shadow: 1px 1px 1px #c1c1c1 inset;
+    font-size: 16px;
+    padding: 0 12px;
+    width: 232px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.login-input:focus {
+	border: 2px solid #FFC366;
 }
 
 #account{
@@ -90,11 +96,11 @@ a:hover{
 	position: relative;
 }
 .captcha-input{
-	width: 120px;
-
+	width: 100%;	
 }
 .captcha-box{
 	float: left;
+	width: 60%;	
 	/* width: 133px;
 	border: 1px solid #ccc;
 	padding-left: 50px;
@@ -106,45 +112,46 @@ a:hover{
 	height: 34px;
 	border: 1px solid #ccc;
 	cursor:pointer;
+	box-sizing: border-box;
 
 }
 .ui-botton{
 	display: inline-block;
-	line-height: 40px;
-	text-align: center;
-	margin-bottom: 8px;
-	border-radius: 3px;
-	border: 0;
-	outline: 0;
-	cursor: pointer;
-	font-size: 14px;
-	font-weight: normal;
-	text-decoration: none;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    border: 0;  
+    outline: 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: none;
 }
 .login-botton{
 	width: 256px;
-	height: 37px;
-	line-height: 37px;
-	color: #fff;
-	background-color: #CF0110;
-	border: 1px solid #95281B;
+    height: 37px;
+    line-height: 37px;
+    color: #fff;
+    background-color: #CF0110;
+    border: 1px solid #95281B;
 }
 .login-botton:hover {
 	background: -webkit-linear-gradient(top,#F2203F 0%, #B60512 100%);
-	background:         linear-gradient(top,#F2203F 0%, #B60512 100%);
+    background:         linear-gradient(top,#F2203F 0%, #B60512 100%);
 }
 .registe-botton{
 	width: 256px;
-	height: 40px;
-	line-height: 40px;
-	border: 1px solid #C2C2C2;
-	color: #4a4a4a;
-	background: -webkit-linear-gradient(top,#FBFEFF 0%, #E8EDF1 100%);
-	background:         linear-gradient(top,#FBFEFF 0%, #E8EDF1 100%);
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #C2C2C2;
+    color: #4a4a4a;
+    background: -webkit-linear-gradient(top,#FBFEFF 0%, #E8EDF1 100%);
+    background:         linear-gradient(top,#FBFEFF 0%, #E8EDF1 100%);
 }
 .registe-botton:hover {
-	background: -webkit-linear-gradient(top,#FBFEFF 0%, #D7DFE5 100%);
-	background:         linear-gradient(top,#FBFEFF 0%, #D7DFE5 100%);
+    background: -webkit-linear-gradient(top,#FBFEFF 0%, #D7DFE5 100%);
+    background:         linear-gradient(top,#FBFEFF 0%, #D7DFE5 100%);
 }
 .tip{
 	width: 120px;
@@ -160,22 +167,22 @@ a:hover{
 	display: none;
 }
 .forgetpassword{
-	padding-bottom: 6px;
-	float: right;
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 8px;
-	width: 100%;
+    padding-bottom: 6px;
+    float: right;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 8px;
+    width: 100%;
 }
 .forgetpassword > a{
 	float: right;
-	color: #59ABE3;
-	cursor: pointer;
+    color: #59ABE3;
+    cursor: pointer;
 }
 .login-logo{
 	text-align: center;
-	padding: 15px 0 8px 0;
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 10px;
+    padding: 15px 0 8px 0;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
 }
 
 
@@ -266,7 +273,7 @@ a:hover{
 }
 .icon-qq-index:hover{
 	background-position:-57px -455px;
-	cursor: pointer;
+	cursor: pointer; 
 }
 .icon-wx-index{
 	position: relative;
