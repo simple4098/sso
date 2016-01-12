@@ -30,7 +30,7 @@
 		<div class="box-login">
 			<div class="login-body">
 				<div class="login-logo"><span id="login_header_title"></span><img id="login_header_img" src="/static/img/LOGO.png"></div>
-				<formF:form method="post" id="fm1" cssClass="" commandName="${commandName}" htmlEscape="true">
+				<formF:form method="post" id="fm1" cssClass="" style="padding-bottom:15px" commandName="${commandName}" htmlEscape="true">
 					<form:errors path="*" id="error_v" cssClass="error_v" element="div" cssStyle="display: none" />
 					<div class="input-wrapper" id="account">
 						<c:if test="${not empty sessionScope.openIdLocalId}">
