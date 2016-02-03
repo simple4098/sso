@@ -33,18 +33,12 @@ public class PersonalizedController extends AbstractController {
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
 		// String domainPrefix = request.getParameter("domainPrefix");
-		// 请求域名前缀，根据其获取所属客栈id
-		String domainHost = request.getHeader("host");
-		logger.error("----------请求domainHost：" + domainHost);
-		logger.error("----------请求getRemoteHost：" + request.getRemoteHost());
-		logger.error("----------请求getRequestURL：" + request.getRequestURL());
-		logger.error("----------请求getServerName：" + request.getServerName());
+		// 请求header中的个性化配置名称，根据其获取所属客栈id
+		String personalizedName = request.getHeader("personalized");
+		logger.error("----------请求个性化配置header值：" + personalizedName);
 		try {
-			if (StringUtils.isNotBlank(domainHost)) {
-				String domainPrefix = domainHost.substring(0, domainHost.indexOf("."));
-//				String domainPrefix = "dengba";
-				logger.error("----------请求域名前缀：" + domainPrefix);
-				Map<String, Object> personalized = userDao.findPersonalizedByDomainPrefix(domainPrefix);
+			if (StringUtils.isNotBlank(personalizedName)) {
+				Map<String, Object> personalized = userDao.findPersonalizedByDomainPrefix(personalizedName);
 				if (personalized != null) {
 					personalized.put("pms_domain", Configuration.getWebHost());
 					response.setContentType("application/json;charset=UTF-8");
