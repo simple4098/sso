@@ -20,6 +20,7 @@ package com.fanqie.sso.web.flow;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang.StringUtils;
 import org.jasig.cas.web.support.WebUtils;
 import org.springframework.webflow.action.AbstractAction;
 import org.springframework.webflow.execution.Event;
@@ -35,7 +36,7 @@ public final class ProvideLoginTicketAction extends AbstractAction {
 	@Override
 	protected Event doExecute(final RequestContext context) throws Exception {
 		final HttpServletRequest request = WebUtils.getHttpServletRequest(context);
-        if (request.getParameter("from") != null && request.getParameter("from").equalsIgnoreCase("index")) {
+        if (StringUtils.isNotBlank(request.getParameter("personalized"))) {
             return result("loginTicketRequested");
         }
 		return result("continue");
