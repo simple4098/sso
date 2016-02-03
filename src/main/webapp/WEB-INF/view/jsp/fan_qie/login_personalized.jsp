@@ -23,6 +23,7 @@
 	<div class="header">
 		<img id="login_header_img">
 		<span id="login_header_title"></span>
+		<input type="hidden" id="personalizedName" value="<%=request.getParameter("personalized")%>" />
 	</div>
 	<div id="container" class="content">
 		<div class="login">
@@ -74,7 +75,7 @@
 	<script type="text/javascript" src="/static/js/login.js"></script>
 	<script>
 		//客栈个性化
-		$.get("/getPersonalizedByDomainPrefix").done(function(obj) {
+		$.get("/getPersonalizedByDomainPrefix?personalized=" + $("#personalizedName").val()).done(function(obj) {
 			if(obj){
 				var pms_domain = obj.pms_domain
 				$("#login_header_title").text(obj.login_header_title)

@@ -34,7 +34,7 @@ public class PersonalizedController extends AbstractController {
 			throws Exception {
 		// 请求header中的个性化配置名称，根据其获取所属客栈id
 		String personalizedName = request.getParameter("personalized");
-		logger.error("----------请求个性化配置header值：" + personalizedName);
+		logger.error("----------请求个性化配置值：" + personalizedName);
 		try {
 			if (StringUtils.isNotBlank(personalizedName)) {
 				Map<String, Object> personalized = userDao.findPersonalizedByDomainPrefix(personalizedName);
