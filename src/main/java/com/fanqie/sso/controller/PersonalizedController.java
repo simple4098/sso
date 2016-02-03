@@ -32,7 +32,7 @@ public class PersonalizedController extends AbstractController {
 	@ResponseBody
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		// 请求header中的个性化配置名称，根据其获取所属客栈id
+		// 请求参数中的个性化配置名称，根据其获取客栈配置
 		String personalizedName = request.getParameter("personalized");
 		logger.info("----------请求个性化配置值：" + personalizedName);
 		try {
