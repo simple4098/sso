@@ -144,7 +144,7 @@ public class ImageFanQieVaditeAuthenticationViaFormAction {
                     final String code = "user.core.error";
                     messageContext.addMessage(new MessageBuilder().error().code(code).arg("").defaultText(code).build());
                     // 当验证失败后，判断参数中是否获否 login-at 参数，如果包含的话则跳转至 login ticket 获取页
-                    String referer = context.getRequestParameters().get("from");
+                    String referer = context.getRequestParameters().get("personalized");
                     if (!org.apache.commons.lang.StringUtils.isBlank(referer)) {
                         return newEvent("errorForRemoteRequestor");
                     }
@@ -154,7 +154,7 @@ public class ImageFanQieVaditeAuthenticationViaFormAction {
             return newEvent(SUCCESS);
         } catch (final org.jasig.cas.authentication.AuthenticationException e) {
         	// 当验证失败后，判断参数中是否获否 login-at 参数，如果包含的话则跳转至 login ticket 获取页
-            String referer = context.getRequestParameters().get("from");
+            String referer = context.getRequestParameters().get("personalized");
             if (!org.apache.commons.lang.StringUtils.isBlank(referer)) {
                 return newEvent("authenticationFailureForRemoteRequestor", e);
             }

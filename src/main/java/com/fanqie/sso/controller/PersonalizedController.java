@@ -32,9 +32,8 @@ public class PersonalizedController extends AbstractController {
 	@ResponseBody
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		// String domainPrefix = request.getParameter("domainPrefix");
 		// 请求header中的个性化配置名称，根据其获取所属客栈id
-		String personalizedName = request.getHeader("personalized");
+		String personalizedName = request.getParameter("personalized");
 		logger.error("----------请求个性化配置header值：" + personalizedName);
 		try {
 			if (StringUtils.isNotBlank(personalizedName)) {
