@@ -127,7 +127,7 @@
         			</li>
         		</ul>
         	</div>
-        	<p><a class="accept">我知道了，仍然进入系统>></a></p>
+        	<p><a data-dismiss="popups" class="accept">我知道了，仍然进入系统>></a></p>
         </div>
     </div>
 </div>
