@@ -51,6 +51,10 @@ $(function(){
 			}
 		})
 	}();
+	
+	if(!$.browser.chrome){
+		$('#warn_tip_popups').popups()
+	}
 })
 // 验证码
 function refresh(obj){

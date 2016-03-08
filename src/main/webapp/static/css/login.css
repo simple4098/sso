@@ -301,3 +301,46 @@ a:hover{
 	background-position:-161px -455px;
 	cursor: pointer;
 }
+
+/*css部分*/
+.dialog-browser-detection {
+	color: #666;
+	font-size: 14px;
+}
+.dialog-browser-detection h2 {
+	color: #f37632;
+    font-size: 18px;
+    text-align: center;
+}
+.dialog-browser-detection p {
+	text-align: center;
+}
+.dialog-browser-detection .down-brower {
+	float: left;
+    width: 100%;
+    text-align: center;
+}
+.dialog-browser-detection .down-brower ul {
+	width: 390px;
+    margin: 0 auto;
+}
+.dialog-browser-detection .down-brower li {
+    width: 149px;
+    height: 131px;
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.dialog-browser-detection .down-brower li:hover {
+	border-radius: 10px;
+    box-shadow: 1px 1px 15px #ccc;
+}
+.dialog-browser-detection .grey {
+	color: #ccc;
+}
+.dialog-browser-detection .accept {
+	color: #546eb3;
+	font-size: 12px;
+	text-decoration: underline;
+}

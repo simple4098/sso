@@ -17,6 +17,7 @@
 	<meta name="author" content="">
 	<meta name="renderer" content="webkit">
 	<link rel="shortcut icon" type="image/ico" href="http://assets.fanqiele.com/1.0.8/images/favicon.ico" />
+	<link rel="stylesheet" media="screen" href="http://assets.test.fanqiele.com/core/css/tomasky.core.all.css" />
 	<link type="text/css" rel="stylesheet" href="http://assets.fanqiele.com/1.0.8/pkg/common.css">
 	<link rel="stylesheet" href="/static/css/login.css">
 </head>
@@ -93,7 +94,47 @@
 		<div class="clear"></div>
 	</div>
 </div>
+
+<div id="warn_tip_popups" class="tomasky-ui-popups dialog-browser-detection" style="display: none">
+    <div class="ui-popups-dialog">
+        <em class="close" data-dismiss="popups" ms-click="modifyRoomNumClose">x</em>
+        <div class="ui-popups-head">
+            <h3 class="ui-popups-title">浏览器版本提示</h3>
+        </div>
+        <div class="ui-popups-body" style="width: 560px">
+        	<h2>检测到您的浏览器已经过时了</h2>
+        	<p>低版本浏览器将导致系统无法正常使用！为了您更好的使用体验</p>
+        	<p>建议您点击下载以下浏览器。</p>
+        	<div class="down-brower">
+        		<ul>
+        			<li>
+        				<a href="http://se.360.cn/">
+	        				<dl>
+	        					<dd><img src="/static/img/360.png"></dd>
+	        					<dd class="grey">360浏览器</dd>
+	        					<dd>可连接身份读卡器</dd>
+	        				</dl>
+        				</a>
+        			</li>
+        			<li>
+        				<a href="http://down.tech.sina.com.cn/page/40975.html?qq-pf-to=pcqq.c2c">
+	        				<dl>
+	        					<dd><img src="/static/img/google.png"></dd>
+	        					<dd class="grey">chrome浏览器</dd>
+	        					<dd>不支持身份读卡器</dd>
+	        				</dl>
+        				</a>
+        			</li>
+        		</ul>
+        	</div>
+        	<p><a class="accept">我知道了，仍然进入系统>></a></p>
+        </div>
+    </div>
+</div>
+<!-- 
 <script type="text/javascript" src="/static/js/jquery_1.9.js"></script>
+ -->
+<script src="http://assets.fanqiele.com/core/js/tomasky.core.all.js" type="text/javascript"></script>
 <script type="text/javascript" src="/static/js/login.js"></script>
 <script>
 
