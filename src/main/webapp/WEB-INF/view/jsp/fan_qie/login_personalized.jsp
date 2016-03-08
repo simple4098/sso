@@ -16,6 +16,7 @@
 	<meta name="author" content="">
 	<meta name="renderer" content="webkit">
 	<title>番茄来了-认证中心</title>
+	<link rel="stylesheet" media="screen" href="http://assets.test.fanqiele.com/core/css/tomasky.core.all.css" />
 	<link rel="stylesheet" media="screen" href="/static/css/lib.min.css" />
 	<link rel="stylesheet" media="screen" href="/static/css/login_personalized.css" />
 </head>
@@ -108,7 +109,10 @@
 	        </div>
 	    </div>
 	</div>
+	<!-- 
 	<script type="text/javascript" src="/static/js/jquery_1.9.js"></script>
+	 -->
+	<script src="http://assets.fanqiele.com/core/js/tomasky.core.all.js" type="text/javascript"></script>
 	<script type="text/javascript" src="/static/js/login.js"></script>
 	<script>
 		//客栈个性化
