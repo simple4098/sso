@@ -48,7 +48,7 @@
             <id>nexus</id>
             <layout>default</layout>
             <name>nexus</name>
-            <url>http://repo.fanqielaile.com/nexus/content/groups/public/</url>
+            <url>http://repo.afanqie.cn/content/groups/public/</url>
         </repository>
     </repositories>
     <!--<profiles>
