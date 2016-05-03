@@ -2,6 +2,7 @@ package com.fanqie.sso.controller;
 
 import com.fanqie.sso.dao.UserDao;
 import net.sf.json.JSONObject;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,8 +37,16 @@ public class UserInfoController extends AbstractController {
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String userName = request.getParameter("userName");
         String tonKent = request.getParameter("tonKent");
+        String innIdStr = request.getParameter("innId");
+        Integer omsInnId = null;
         if ("fanQieST".equals(tonKent)) {
-            Map<String, Object> userInfo = userDao.findUserInfo(userName, userName);
+            Map<String, Object> userInfo = null;
+            if (StringUtils.isNotEmpty( innIdStr)){
+                omsInnId = Integer.valueOf(innIdStr);
+                userInfo = userDao.findOmsUserInfo(omsInnId);
+            }else {
+                userInfo = userDao.findUserInfo(userName,userName);
+            }
             String parentMobile = "";
             String innName = "";
             if (userInfo!=null){

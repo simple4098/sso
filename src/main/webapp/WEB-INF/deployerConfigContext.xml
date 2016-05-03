@@ -35,6 +35,7 @@
     </bean>
     <bean id="userDao" class="com.fanqie.sso.dao.UserDao" parent="baseDao">
         <property name="sql" value="select * from tomato_inn_admin where (mobile=? OR user_code=?) and status=2" />
+        <property name="obtSql" value="select * from tomato_inn_admin where inn_id=? and status=2" />
         <property name="parentSql" value="select * from tomato_inn_admin where id=?" />
         <property name="innSql" value="select * from tomato_inn where id=?" />
         <property name="personalizedGetByDomainPrefixSql" value="select ip.* from tomato_inn_personalized ip inner join tomato_inn_to_personalized itp on ip.id = itp.personalized_id where itp.domain_prefix = ?" />
