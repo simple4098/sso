@@ -40,13 +40,13 @@ public class UserInfoController extends AbstractController {
         String userName = request.getParameter("userName");
         String tonKent = request.getParameter("tonKent");
         String innIdStr = request.getParameter("innId");
-        //Integer omsInnId = null;
+        Integer omsInnId = null;
         if ("fanQieST".equals(tonKent)) {
             Map<String, Object> userInfo = null;
             System.out.println("================sso param:" + request.getParameterMap());
             if (StringUtils.isNotEmpty( innIdStr)){
-                //omsInnId = Integer.valueOf(innIdStr);
-                userInfo = userDao.findOmsUserInfo(userName,innIdStr);
+                omsInnId = Integer.valueOf(innIdStr);
+                userInfo = userDao.findOmsUserInfo(userName,omsInnId);
             }else {
                 userInfo = userDao.findUserInfo(userName,userName);
             }

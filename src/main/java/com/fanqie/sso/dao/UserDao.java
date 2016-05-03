@@ -78,7 +78,7 @@ public class UserDao extends BaseDao {
 		return getJdbcTemplate().queryForMap(this.sql, params);
 	}
 
-	public Map<String, Object> findOmsUserInfo(String... params) {
+	public Map<String, Object> findOmsUserInfo(Object... params) {
 		return getJdbcTemplate().queryForMap(this.obtSql, params);
 	}
 
