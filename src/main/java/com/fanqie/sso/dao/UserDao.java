@@ -11,20 +11,20 @@ import java.util.Map;
  */
 public class UserDao extends BaseDao {
 	private String sql;
-	private String obtSql;
+	/*private String obtSql;*/
 	private String parentSql;
 	private String innSql;
 	private String personalizedGetByDomainPrefixSql;
 	private String personalizedGetByInnIdSql;
 	private String personalizedSetSql;
 
-	public String getObtSql() {
+	/*public String getObtSql() {
 		return obtSql;
 	}
 
 	public void setObtSql(String obtSql) {
 		this.obtSql = obtSql;
-	}
+	}*/
 
 	public String getSql() {
 		return sql;
@@ -78,9 +78,9 @@ public class UserDao extends BaseDao {
 		return getJdbcTemplate().queryForMap(this.sql, params);
 	}
 
-	public Map<String, Object> findOmsUserInfo(Object... params) {
+	/*public Map<String, Object> findOmsUserInfo(Object... params) {
 		return getJdbcTemplate().queryForMap(this.obtSql, params);
-	}
+	}*/
 
 	public Map<String, Object> findUserInfoById(Integer... params) {
 		return getJdbcTemplate().queryForMap(this.parentSql, params);
