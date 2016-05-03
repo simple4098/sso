@@ -3,6 +3,7 @@ package com.fanqie.sso.controller;
 import com.fanqie.sso.dao.UserDao;
 import net.sf.json.JSONObject;
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,6 +22,7 @@ import java.util.Map;
  */
 @Controller
 public class UserInfoController extends AbstractController {
+    private  static  final Logger log =   Logger.getLogger(UserInfoController.class);
     @NotNull
     private UserDao userDao;
 
@@ -38,16 +40,17 @@ public class UserInfoController extends AbstractController {
         String userName = request.getParameter("userName");
         String tonKent = request.getParameter("tonKent");
         String innIdStr = request.getParameter("innId");
-        Integer omsInnId = null;
+        //Integer omsInnId = null;
         if ("fanQieST".equals(tonKent)) {
             Map<String, Object> userInfo = null;
-            logger.info("================sso param:"+request.getParameterMap());
+            System.out.println("================sso param:" + request.getParameterMap());
             if (StringUtils.isNotEmpty( innIdStr)){
-                omsInnId = Integer.valueOf(innIdStr);
-                userInfo = userDao.findOmsUserInfo(omsInnId);
+                //omsInnId = Integer.valueOf(innIdStr);
+                userInfo = userDao.findOmsUserInfo(userName,innIdStr);
             }else {
                 userInfo = userDao.findUserInfo(userName,userName);
             }
+            System.out.println("================sso userInfo:" + userInfo);
             String parentMobile = "";
             String innName = "";
             if (userInfo!=null){
