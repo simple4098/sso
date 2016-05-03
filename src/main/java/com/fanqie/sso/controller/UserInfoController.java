@@ -41,6 +41,7 @@ public class UserInfoController extends AbstractController {
         Integer omsInnId = null;
         if ("fanQieST".equals(tonKent)) {
             Map<String, Object> userInfo = null;
+            logger.info("================sso param:"+request.getParameterMap());
             if (StringUtils.isNotEmpty( innIdStr)){
                 omsInnId = Integer.valueOf(innIdStr);
                 userInfo = userDao.findOmsUserInfo(omsInnId);
