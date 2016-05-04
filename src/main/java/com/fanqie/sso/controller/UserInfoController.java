@@ -39,8 +39,18 @@ public class UserInfoController extends AbstractController {
     protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String userName = request.getParameter("userName");
         String tonKent = request.getParameter("tonKent");
+        String innIdStr = request.getParameter("innId");
+        Integer omsInnId = null;
         if ("fanQieST".equals(tonKent)) {
-            Map<String, Object> userInfo = userDao.findUserInfo(userName, userName);
+            Map<String, Object> userInfo = null;
+            System.out.println("================sso param:" + request.getParameterMap());
+            if (StringUtils.isNotEmpty( innIdStr)){
+                omsInnId = Integer.valueOf(innIdStr);
+                userInfo = userDao.findOmsUserInfo(omsInnId);
+            }else {
+                userInfo = userDao.findUserInfo(userName,userName);
+            }
+            System.out.println("================sso userInfo:" + userInfo);
             String parentMobile = "";
             String innName = "";
             if (userInfo!=null){
@@ -67,7 +77,6 @@ public class UserInfoController extends AbstractController {
         }
         return null;
     }
-
 
 
     public void setUserDao(UserDao userDao) {
