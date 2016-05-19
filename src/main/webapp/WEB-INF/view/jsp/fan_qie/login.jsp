@@ -80,7 +80,7 @@
 		<div class="contact-index">
 			<em class="icon icon-tele"></em>咨询热线：4000-230-190
 			<a href="tencent://message/?Menu=yes&amp;amp;uin=938062840&amp;amp;Service=58&amp;amp;SigT=A7F6FEA02730C9883990CD5D19271A46BE22B2CAAC936E523D384B6957A1C4F2A81D18D3D1345E30702F32987DDF42DDEBBD265CCA3BCFBA6A8BC3D03220A437002CDBCC1FD2E1BCD50ADA559E6C8EFF870DACE6D1A6A4B268DBDB94AE9AFCD3BC2098B73D5927489469EF574FC66F15FD27DC8AA2A058CE&amp;amp;SigU=30E5D5233A443AB24DED9B7AAE8FC1C725F5D2DD81A867220803EEEEB9CC3A0B1F58A62F0E376672B4C1CD37136B0F453C33709FDD2AE1F7450D4A551DCD637964B7BBA89BF9BB8B">
-			<em class="icon icon-qq-index"><img src="/static/img/index_qq.png" alt="qq"></em></a><em class="icon icon-wx-index"><img src="/static/img/index_wx.png" alt="微信"></em><a target="_blank" href="http://weibo.com/fanqielaile"><em class="icon icon-weibo-index"></em></a>
+			<em class="icon icon-qq-index"><img src="/static/img/index_kf.png" alt="qq"></em></a><em class="icon icon-wx-index"><img src="/static/img/index_wx.png" alt="微信"></em><a target="_blank" href="http://weibo.com/fanqielaile"><em class="icon icon-weibo-index"></em></a>
 		</div>
 		<ul class="fl fl-first">
 			<li><a href="http://www.fanqiele.com/about.html">关于我们</a></li>
@@ -131,7 +131,7 @@
         </div>
     </div>
 </div>
-<!-- 
+<!--
 <script type="text/javascript" src="/static/js/jquery_1.9.js"></script>
  -->
 <script src="http://assets.fanqiele.com/core/js/tomasky.core.all.js" type="text/javascript"></script>
