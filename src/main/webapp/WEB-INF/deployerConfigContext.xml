@@ -175,7 +175,7 @@
                <property name="forgetPassword" value="http://pms.local.fanqiele.com:8686/public/view/home/rp.html"/>
            </bean>
         <bean id="memcachedClient" class="net.spy.memcached.spring.MemcachedClientFactoryBean"
-              p:servers="192.168.1.159:22222"
+              p:servers="192.168.1.27:22222"
               p:protocol="BINARY"
               p:locatorType="CONSISTENT"
               p:failureMode="Redistribute"
