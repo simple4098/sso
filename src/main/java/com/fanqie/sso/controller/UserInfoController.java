@@ -71,9 +71,9 @@ public class UserInfoController extends AbstractController {
                 userInfo.put("innName",innName);
             }
             JSONObject jsonObject = JSONObject.fromObject(userInfo);
-            response.setContentType("json/html;charset=UTF-8");
+            response.setContentType("application/json;charset=UTF-8");
             response.getWriter().print(jsonObject.toString());
-            //response.getWriter().flush();
+            response.getWriter().flush();
         }
         return null;
     }
