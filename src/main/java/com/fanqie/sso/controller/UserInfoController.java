@@ -43,14 +43,17 @@ public class UserInfoController extends AbstractController {
         Integer omsInnId = null;
         if ("fanQieST".equals(tonKent)) {
             Map<String, Object> userInfo = null;
-            System.out.println("================sso param:" + request.getParameterMap());
+            Map<String, Object> userInn = null;
             if (StringUtils.isNotEmpty( innIdStr)){
                 omsInnId = Integer.valueOf(innIdStr);
                 userInfo = userDao.findOmsUserInfo(omsInnId);
-            }else {
-                userInfo = userDao.findUserInfo(userName,userName);
             }
-            System.out.println("================sso userInfo:" + userInfo);
+            if (StringUtils.isNotEmpty(userName)){
+                userInn = userDao.findUserInfo(userName,userName);
+            }
+            if (userInfo!=null && userInn!=null){
+                userInfo.put("user_code",userInn.get("user_code"));
+            }
             String parentMobile = "";
             String innName = "";
             if (userInfo!=null){
