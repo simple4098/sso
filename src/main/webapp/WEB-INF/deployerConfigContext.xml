@@ -227,15 +227,16 @@
             <property name="username" value="sso_pro"/>
             <property name="password" value="8s5p5BO4HTuPDB3C"/>
             <property name="maxWait" value="1000" />
-            <property name="minIdle" value="2" />
-            <property name="maxIdle" value="10" />
             <property name="initialSize" value="5" />
-            <property name="maxActive" value="50" />
+            <property name="maxActive" value="20" />
             <property name="testWhileIdle" value="true" />
-            <property name="timeBetweenEvictionRunsMillis" value="30000" />
-            <property name="minEvictableIdleTimeMillis" value="60000" />
-            <!--<property name="removeAbandoned" value="true" />
-            <property name="removeAbandonedTimeout" value="1800" />-->
+            <property name="testOnBorrow" value="true" />
+            <property name="testOnReturn" value="true" />
+            <property name="timeBetweenEvictionRunsMillis" value="15000" />
+            <property name="minEvictableIdleTimeMillis" value="60000"/>
+            <property name="removeAbandoned" value="true" />
+            <property name="removeAbandonedTimeout" value="1800" />
+            <property name="validationQuery" value="select 1"/>
         </bean>
 
        <!-- <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/sso"/>-->
