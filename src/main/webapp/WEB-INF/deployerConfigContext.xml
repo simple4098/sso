@@ -220,21 +220,25 @@
         </bean>
     </beans>
     <beans profile="production">
-       <!-- <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+
+        <bean name="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
             <property name="driverClassName" value="org.postgresql.Driver"/>
-            <property name="url" value="jdbc:postgresql://10.163.227.13:9999/tomato_db"/>
+            <property name="url" value="jdbc:postgresql://10.163.227.13:9999/tomato"/>
             <property name="username" value="sso_pro"/>
             <property name="password" value="8s5p5BO4HTuPDB3C"/>
             <property name="maxWait" value="1000" />
+            <property name="minIdle" value="2" />
+            <property name="maxIdle" value="10" />
             <property name="initialSize" value="5" />
-            <property name="maxActive" value="20" />
-            <property name="testWhileIdle" value="false" />
-            <property name="timeBetweenEvictionRunsMillis" value="15000" />
-            <property name="removeAbandoned" value="true" />
-            <property name="removeAbandonedTimeout" value="1800" />
-        </bean>-->
-        <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/sso"/>
+            <property name="maxActive" value="50" />
+            <property name="testWhileIdle" value="true" />
+            <property name="timeBetweenEvictionRunsMillis" value="30000" />
+            <property name="minEvictableIdleTimeMillis" value="60000" />
+            <!--<property name="removeAbandoned" value="true" />
+            <property name="removeAbandonedTimeout" value="1800" />-->
+        </bean>
 
+       <!-- <jee:jndi-lookup id="dataSource" jndi-name="java:comp/env/jdbc/sso"/>-->
         <bean  class="com.fanqie.sso.common.Configuration">
             <property name="webHost" value="http://www.fanqiele.com"/>
             <property name="registerUrl" value="http://www.fanqiele.com/registe.html"/>
