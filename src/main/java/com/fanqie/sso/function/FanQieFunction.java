@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.util.Date;
 import java.util.Properties;
 
 /**
@@ -60,7 +61,7 @@ public class FanQieFunction {
      * 读取默认的应用的注册地址
      */
     public static String obtRegisterUrl(){
-        return  Configuration.getRegisterUrl();
+        return  Configuration.getRegisterUrl()+"?v="+new Date().getTime();
     }
 
     //忘记密码跳转页面
